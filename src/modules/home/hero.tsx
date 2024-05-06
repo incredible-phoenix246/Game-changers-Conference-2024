@@ -3,30 +3,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const ShuffleHero = () => {
-  return (
-    <section 
-    className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8  bg-black"
-    >
-      <div>
-        <span className="block mb-4 text-[24px] md:text-sm text-red-600 font-medium">
-          THEME:
-        </span>
-        <h3 className="text-4xl md:text-6xl font-semibold text-white">
-          Game Changers for Global impact
-        </h3>
-        <p className="text-base md:text-lg text-white my-4 md:my-6">
-          It's time to lead, inspire, and impact the Next generation.
-        </p>
-        <button className="bg-red-600 text-white font-medium py-2 px-4 rounded transition-all hover:bg-red-400 active:scale-95">
-          Buy your tickect
-        </button>
-      </div>
-      <ShuffleGrid />
-    </section>
-  );
-};
-
 const shuffle = (array: (typeof squareData)[0][]) => {
   let currentIndex = array.length,
     randomIndex;
@@ -89,7 +65,7 @@ const generateSquares = () => {
       key={sq.id}
       layout
       transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full"
+      className="w-full h-full rounded-xl"
       style={{
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",
@@ -98,7 +74,7 @@ const generateSquares = () => {
   ));
 };
 
-const ShuffleGrid = () => {
+export const ShuffleGrid = () => {
   const timeoutRef = useRef<any>(null);
   const [squares, setSquares] = useState(generateSquares());
 
@@ -120,5 +96,3 @@ const ShuffleGrid = () => {
     </div>
   );
 };
-
-export default ShuffleHero;
