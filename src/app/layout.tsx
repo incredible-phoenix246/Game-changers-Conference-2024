@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "../styles/globals.scss";
 import StateContextProvider from "@/context/StateCtx";
 
-const inter = Inter({ subsets: ["latin"] });
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-work-sans",
+});
 
 const currentYear = new Date().getFullYear().toString();
 
@@ -49,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StateContextProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={`${workSans.className}`}>{children}</body>
       </StateContextProvider>
     </html>
   );

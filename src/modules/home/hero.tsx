@@ -5,7 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 const ShuffleHero = () => {
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8  bg-black">
+    <section 
+    className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8  bg-black"
+    >
       <div>
         <span className="block mb-4 text-[24px] md:text-sm text-red-600 font-medium">
           THEME:
