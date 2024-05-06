@@ -7,7 +7,7 @@ import {
 } from "@/components/countdown";
 import React, { useEffect, useRef, useState } from "react";
 import { Location, Calendar2 } from "iconsax-react";
-import { ShuffleGrid } from "./home/hero";
+import { ShuffleGrid } from "./hero";
 
 const HEROSECTION = () => {
   const COUNTDOWN_FROM = "8/24/2024";
