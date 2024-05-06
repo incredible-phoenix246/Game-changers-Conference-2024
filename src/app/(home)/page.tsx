@@ -1,12 +1,16 @@
 import React from "react";
 import HEROSECTION from "@/modules/home/HEROSECTION";
-import { MyComponent } from "@/modules/underHero";
+import { ConfStat } from "@/modules/underHero";
+import MyComponent from "@/modules/why";
+import Features from "@/modules/features";
 
 const HOME = () => {
   return (
     <>
       <HEROSECTION />
-      <MyComponent />
+      <ConfStat />
+      <Features />
+      {/* <MyComponent /> */}
     </>
   );
 };

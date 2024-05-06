@@ -37,9 +37,9 @@ const statData = [
   },
 ];
 
-function MyComponent() {
+function ConfStat() {
   return (
-    <section className="flex justify-center self-center z-[99] mx-auto items-center py-4 md:py-2 h-full md:h-[150px] md:-mt-[20px] w-full md:w-[70%] rounded-3xl shadow-2xl leading-[150%]">
+    <section className="flex justify-center self-center z-[999] relative bg-white mx-auto items-center py-4 md:py-2 h-full md:h-[150px] md:-mt-[20px] w-full md:w-[70%] rounded-3xl shadow-2xl leading-[150%]">
       <div className="flex gap-5 md:gap-7 items-center justify-center flex-col md:flex-row">
         {statData.map((stat, index) => (
           <StatItem key={index} {...stat} />
@@ -49,4 +49,4 @@ function MyComponent() {
   );
 }
 
-export { MyComponent };
+export { ConfStat };
