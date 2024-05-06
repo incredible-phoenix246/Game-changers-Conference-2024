@@ -166,9 +166,10 @@ const HeadOne = () => (
         impact on a global scale.
       </p>
       <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-        Whether you're seeking inspiration, looking to expand your knowledge, or
-        aiming to make a difference, our expert session is your gateway to
-        unlocking the power of innovation and leading change for a better world.
+        Whether you&apos;re seeking inspiration, looking to expand your
+        knowledge, or aiming to make a difference, our expert session is your
+        gateway to unlocking the power of innovation and leading change for a
+        better world.
       </p>
     </div>
   </div>
