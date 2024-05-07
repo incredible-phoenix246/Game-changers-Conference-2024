@@ -123,7 +123,7 @@ export function MyComponent() {
           BOOKING
         </span>
       </div>
-      <div className="mt-28 w-full max-md:mt-10 max-md:max-w-full">
+      <div className="w-full max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col mt-7 text-xl font-bold leading-8 max-md:mt-10">
