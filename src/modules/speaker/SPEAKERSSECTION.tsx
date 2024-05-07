@@ -243,7 +243,7 @@ const LinkBox = ({
                       <Link
                         key={social.url}
                         href={social.url}
-                        className="flex justify-center items-center bg-red-300 rounded-md aspect-[1.07]"
+                        className="flex justify-center items-center bg-red-400 rounded-md aspect-[1.07]"
                       >
                         <Image
                           src={`/socials/${social.platform}.svg`}
