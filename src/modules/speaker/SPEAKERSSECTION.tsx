@@ -204,6 +204,11 @@ const LinkBox = ({
       }}
       className="relative grid md:h-[500px] md:w-[450px] h-[400px] w-[350px]  place-content-center inset-0 z-0 transition-transforms"
     >
+      <div className="flex items-start justify-start top-0 left-0 md:max-w-[80%] p-4 absolute inset-0">
+        <div className="max-w-[100px]">
+          <Image src="/logo2.png" alt="watermark" width={155} height={55} />
+        </div>
+      </div>
       <div
         ref={scope}
         style={{
@@ -211,9 +216,6 @@ const LinkBox = ({
         }}
         className="absolute inset-0 flex flex-col bg-neutral-900 bg-opacity-[50%] text-white text-center"
       >
-        <div className="flex items-start justify-start top-0 left-0 md:max-w-[80%] p-4">
-          <Image src="/logo2.png" alt="watermark" width={155} height={55} />
-        </div>
         <div className="absolute inset-0 flex flex-col items-center justify-end text-center">
           <div className="text-center font-bold mb-4 w-full pb-3 md:max-w-[80%]">
             <p className="mt-2 text-base leading-6">Name: {name}</p>
