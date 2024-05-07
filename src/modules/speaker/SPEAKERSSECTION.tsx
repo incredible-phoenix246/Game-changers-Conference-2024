@@ -223,9 +223,9 @@ const LinkBox = ({
                 <SheetHeader>
                   <SheetTitle>{name}</SheetTitle>
                 </SheetHeader>
-                <div className="grid gap-4 py-4">
-                  <div className="flex items-center gap-4 w-full">
-                    <div className="flex w-[300px] h-[300px]">
+                <div className="grid gap-4 py-4 place-content-center">
+                  <div className="flex items-center gap-4 w-full ">
+                    <div className="flex w-[300px] h-[300px] self-center mx-auto">
                       <Image
                         width={300}
                         height={300}
