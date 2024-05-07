@@ -20,7 +20,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@ui/*": [
-        "./components/ui/*"
+        "./src/components/ui/*"
       ],
       "@modules/*": [
         "./src/modules/*"
