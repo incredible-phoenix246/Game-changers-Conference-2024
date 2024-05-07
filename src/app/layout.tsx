@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "../styles/globals.scss";
+import { Toaster } from "@/components/ui/toaster";
+
 import StateContextProvider from "@/context/StateCtx";
 
 const workSans = Work_Sans({
@@ -53,7 +55,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StateContextProvider>
-        <body className={`${workSans.className}`}>{children}</body>
+        <body className={`${workSans.className}`}>
+          {children}
+          <Toaster />
+        </body>
       </StateContextProvider>
     </html>
   );

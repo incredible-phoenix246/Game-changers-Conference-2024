@@ -3,6 +3,7 @@ import HEROSECTION from "@/modules/home/HEROSECTION";
 import { ConfStat } from "@/modules/underHero";
 import Features from "@/modules/features";
 import { SPEAKERSECTION } from "@/modules/speaker/SPEAKERSSECTION";
+import { MyComponent } from "@/modules/Tickects";
 
 const HOME = () => {
   return (
@@ -11,6 +12,7 @@ const HOME = () => {
       <ConfStat />
       <Features />
       <SPEAKERSECTION />
+      <MyComponent />
     </>
   );
 };
