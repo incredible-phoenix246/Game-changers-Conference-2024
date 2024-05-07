@@ -1,8 +1,8 @@
 import React from "react";
 import HEROSECTION from "@/modules/home/HEROSECTION";
 import { ConfStat } from "@/modules/underHero";
-import MyComponent from "@/modules/why";
 import Features from "@/modules/features";
+import { Example } from "@/modules/speaker/SPEAKERSSECTION";
 
 const HOME = () => {
   return (
@@ -10,7 +10,7 @@ const HOME = () => {
       <HEROSECTION />
       <ConfStat />
       <Features />
-      {/* <MyComponent /> */}
+      <Example />
     </>
   );
 };

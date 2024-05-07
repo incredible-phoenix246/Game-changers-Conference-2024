@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 const Features = () => {
   return (
@@ -45,7 +45,7 @@ const Card = ({ card }: { card: CardType }) => {
           backgroundPosition: "center",
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
+      />
       <div className="absolute inset-0 z-10 grid place-content-center">
         <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-4xl font-black uppercase text-white backdrop-blur-lg w-full">
           {card.title}

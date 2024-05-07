@@ -60,7 +60,12 @@ const CountdownItemsec = ({ num, text }: { num: number; text: string }) => {
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="text-base font-light text-black">{text}</span>
+      <span className="text-base font-light text-black hidden md:block">
+        {text}
+      </span>
+      <span className="text-base font-light text-black flex md:hidden">
+        secs
+      </span>
     </div>
   );
 };
