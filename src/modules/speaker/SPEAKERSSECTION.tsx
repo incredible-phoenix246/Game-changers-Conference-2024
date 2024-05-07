@@ -58,14 +58,14 @@ export const SPEAKERSECTION = () => {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full bg-black">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
             Our Noteworthy <span className="text-red-100">SPEAKERS</span>
           </h2>
 
-          <p className="mt-5 w-full text-base tracking-normal text-neutral-600 max-md:max-w-full">
+          <p className="mt-5 w-full text-base tracking-normal text-white max-md:max-w-full">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             malesuada tristique justo quis ultrices. Morbi gravida dignissim
             lectus, et semper nulla varius a
@@ -187,7 +187,6 @@ const LinkBox = ({
   };
 
   const { isMobile } = useMediaQuery();
-  console.log(link);
 
   return (
     <div
@@ -210,59 +209,64 @@ const LinkBox = ({
         style={{
           clipPath: BOTTOM_RIGHT_CLIP,
         }}
-        className="absolute inset-0 flex flex-col items-center justify-end bg-neutral-900 bg-opacity-[50%] text-white text-center"
+        className="absolute inset-0 flex flex-col bg-neutral-900 bg-opacity-[50%] text-white text-center"
       >
-        <div className="text-center font-bold mb-4 w-full pb-3 md:max-w-[80%]">
-          <p className="mt-2 text-base leading-6">Name: {name}</p>
-          <div className="flex w-full justify-end">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button>View Details</Button>
-              </SheetTrigger>
-              <SheetContent side={isMobile ? "bottom" : "right"}>
-                <SheetHeader>
-                  <SheetTitle>{name}</SheetTitle>
-                </SheetHeader>
-                <div className="grid gap-4 py-4 place-content-center">
-                  <div className="flex items-center gap-4 w-full ">
-                    <div className="flex w-[300px] h-[300px] self-center mx-auto">
-                      <Image
-                        width={300}
-                        height={300}
-                        src={img}
-                        alt="speakers"
-                        className="w-full h-full self-center object-cover rounded-lg transition-all duration-300 hover:duration-700 hover:scale-150"
-                      />
+        <div className="flex items-start justify-start top-0 left-0 md:max-w-[80%] p-4">
+          <Image src="/logo2.png" alt="watermark" width={155} height={55} />
+        </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-end text-center">
+          <div className="text-center font-bold mb-4 w-full pb-3 md:max-w-[80%]">
+            <p className="mt-2 text-base leading-6">Name: {name}</p>
+            <div className="flex w-full justify-end">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button>View Details</Button>
+                </SheetTrigger>
+                <SheetContent side={isMobile ? "bottom" : "right"}>
+                  <SheetHeader>
+                    <SheetTitle>{name}</SheetTitle>
+                  </SheetHeader>
+                  <div className="grid gap-4 py-4 place-content-center">
+                    <div className="flex items-center gap-4 w-full ">
+                      <div className="flex w-[300px] h-[300px] self-center mx-auto">
+                        <Image
+                          width={300}
+                          height={300}
+                          src={img}
+                          alt="speakers"
+                          className="w-full h-full self-center object-cover rounded-lg transition-all duration-300 hover:duration-700 hover:scale-150"
+                        />
+                      </div>
+                    </div>
+                    <SheetDescription className="text-black">
+                      {desc}
+                    </SheetDescription>
+                    <div className="flex gap-4 self-start mt-2">
+                      {link?.map((social) => (
+                        <Link
+                          key={social.url}
+                          href={social.url}
+                          className="flex justify-center items-center bg-red-400 rounded-md aspect-[1.07]"
+                        >
+                          <Image
+                            src={`/socials/${social.platform}.svg`}
+                            alt="Social image"
+                            width={40}
+                            height={40}
+                            loading="eager"
+                          />
+                        </Link>
+                      ))}
                     </div>
                   </div>
-                  <SheetDescription className="text-black">
-                    {desc}
-                  </SheetDescription>
-                  <div className="flex gap-4 self-start mt-2">
-                    {link?.map((social) => (
-                      <Link
-                        key={social.url}
-                        href={social.url}
-                        className="flex justify-center items-center bg-red-400 rounded-md aspect-[1.07]"
-                      >
-                        <Image
-                          src={`/socials/${social.platform}.svg`}
-                          alt="Social image"
-                          width={40}
-                          height={40}
-                          loading="eager"
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                <SheetFooter>
-                  <SheetClose asChild>
-                    <Button>Close</Button>
-                  </SheetClose>
-                </SheetFooter>
-              </SheetContent>
-            </Sheet>
+                  <SheetFooter>
+                    <SheetClose asChild>
+                      <Button>Close</Button>
+                    </SheetClose>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>

@@ -5,9 +5,12 @@ import {
   CountdownItem,
   CountdownItemsec,
 } from "@/components/countdown";
+import { Work_Sans, Charmonman } from "next/font/google";
 import React, { useEffect, useRef, useState } from "react";
 import { Location, Calendar2 } from "iconsax-react";
 import { ShuffleGrid } from "./hero";
+
+const char = Charmonman({ subsets: ["latin"], weight: ["400", "700"] });
 
 const HEROSECTION = () => {
   const COUNTDOWN_FROM = "8/24/2024";
@@ -52,19 +55,22 @@ const HEROSECTION = () => {
   };
 
   return (
-    <section className="bg-white">
-      <div className="container py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div className="items-start w-full">
+    <section className="relative min-h-full bg-black">
+      <div className="w-full h-full top-0 left-0 absolute object-cover opacity-[30%]">
+        <ShuffleGrid />
+      </div>
+      <div className="container py-12 grid place-content-center md:w-[60%] items-center gap-8 relative z-10">
+        <div className="items-center w-full">
           <div className="flex flex-col w-full  items-center justify-center">
-            <div className="flex flex-col">
-              <div className="flex gap-1 md:gap-2 justify-between w-full md:w-[60%]">
+            <div className="flex flex-col items-center justify-center w-full">
+              <div className="flex gap-1 md:gap-2 justify-between items-center w-full md:w-[60%]">
                 <CountdownItemday num={remaining.days} text="days" />
                 <CountdownItem num={remaining.hours} text="hours" />
                 <CountdownItem num={remaining.minutes} text="minutes" />
                 <CountdownItemsec num={remaining.seconds} text="seconds" />
               </div>
 
-              <div className="flex gap-5 justify-between self-start py-0.5 text-sm leading-5 text-black mt-5 w-full md:w-[60%]">
+              <div className="flex gap-5 justify-between self-center py-0.5 text-sm leading-5 text-white mt-5 w-full md:w-[60%]">
                 <div className="flex gap-2 items-center justify-center">
                   <Calendar2 />
                   <span>24 AUG, 2024</span>
@@ -75,13 +81,16 @@ const HEROSECTION = () => {
                 </div>
               </div>
               <div>
-                <h1 className="mt-6 text-4xl font-bold text-red-200 leading-[60px] max-md:max-w-full">
-                  Game Changers for Global impact
-                  <span className="text-red-100"> 2024</span> Conference
-                </h1>
-                <p className="mt-2 text-base leading-6 text-neutral-600 max-md:max-w-full">
+                <div className={`${char.className}`}>
+                  <h1 className="mt-6 text-6xl font-bold text-red-200 leading-[50px] max-md:max-w-full">
+                    Game Changers for Global Impact
+                    <span className="text-red-100"> 2024</span>
+                    {/* <span className=``>Conference</span> */}
+                    <span> Conference</span>
+                  </h1>
+                </div>
+                <p className="mt-2 text-base leading-6 text-white max-md:max-w-full">
                   It&apos;s time to transform and inspire you to get in your A
-                  game with increased capacity and capabilities providing you
                   with the relevant knowledge from one percent of top change
                   makers, impact leaders and entrepreneurs with peak
                   performance.
@@ -94,7 +103,6 @@ const HEROSECTION = () => {
           </div>
         </div>
         {/* <div className="items-start w-full"> */}
-        <ShuffleGrid />
       </div>
     </section>
   );

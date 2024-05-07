@@ -16,7 +16,7 @@ const CountdownItem = ({ num, text }: { num: number; text: string }) => {
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="text-xs font-light text-black">{text}</span>
+      <span className="text-xs font-light text-white">{text}</span>
     </div>
   );
 };
@@ -38,7 +38,7 @@ const CountdownItemday = ({ num, text }: { num: number; text: string }) => {
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="text-base font-light text-black">{text}</span>
+      <span className="text-base font-light text-white">{text}</span>
     </div>
   );
 };
@@ -60,10 +60,10 @@ const CountdownItemsec = ({ num, text }: { num: number; text: string }) => {
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="text-base font-light text-black hidden md:block">
+      <span className="text-base font-light text-white hidden md:block">
         {text}
       </span>
-      <span className="text-base font-light text-black flex md:hidden">
+      <span className="text-base font-light text-white flex md:hidden">
         secs
       </span>
     </div>
