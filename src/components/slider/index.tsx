@@ -62,7 +62,13 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ color }) => {
                 width={155}
                 height={55}
               />
-              <Image src={logo.src} alt={logo.alt} width={24} height={24} />
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={30}
+                height={30}
+                className={color === "white" ? "invert" : ""}
+              />
             </div>
           </div>
         ))}

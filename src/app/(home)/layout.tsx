@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Nav/Navbar";
+import Footer from "@/components/footer";
 
 export default function AdminLayout({
   children,
@@ -10,6 +11,7 @@ export default function AdminLayout({
     <>
       <Navbar />
       {children}
+      <Footer />
     </>
   );
 }

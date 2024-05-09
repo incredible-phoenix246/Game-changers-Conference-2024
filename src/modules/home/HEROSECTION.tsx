@@ -56,7 +56,7 @@ const HEROSECTION = () => {
 
   return (
     <section className="relative min-h-full bg-black">
-      <div className="w-full h-full top-0 left-0 absolute object-cover opacity-[30%]">
+      <div className="w-full h-full top-0 left-0 absolute object-cover opacity-[30%] overflow-hidden">
         <ShuffleGrid />
       </div>
       <div className="container py-12 grid place-content-center md:w-[60%] items-center gap-8 relative z-10">
@@ -95,9 +95,7 @@ const HEROSECTION = () => {
                   makers, impact leaders and entrepreneurs with peak
                   performance.
                 </p>
-                <button 
-                className="justify-center self-start px-10 py-4 mt-10 text-base font-medium leading-6 text-center text-white bg-red-200 shadow-2xl rounded-[400px] max-md:px-5"
-                >
+                <button className="justify-center self-start px-10 py-4 mt-10 text-base font-medium leading-6 text-center text-white bg-red-200 shadow-2xl rounded-[400px] max-md:px-5">
                   Learn More
                 </button>
               </div>
