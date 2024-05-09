@@ -56,7 +56,7 @@ const HEROSECTION = () => {
 
   return (
     <section className="relative min-h-full bg-black">
-      <div className="w-full h-full top-0 left-0 absolute object-cover opacity-[30%] overflow-hidden">
+      <div className="w-full h-full top-0 left-0 absolute object-cover opacity-[30%] overflow-hidden px-8">
         <ShuffleGrid />
       </div>
       <div className="container py-12 grid place-content-center md:w-[60%] items-center gap-8 relative z-10">
