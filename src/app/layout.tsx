@@ -5,11 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 
 import StateContextProvider from "@/context/StateCtx";
 
-const workSans = Roboto({
+const workSans = Work_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["100", "300", "400", "500", "700", "900"]
-  // variable: "--font-work-sans",
+  variable: "--font-work-sans",
 });
 
 const currentYear = new Date().getFullYear().toString();

@@ -5,14 +5,14 @@ import {
   CountdownItem,
   CountdownItemsec,
 } from "@/components/countdown";
-import { Work_Sans, Charmonman } from "next/font/google";
+import { Work_Sans, Charmonman, Josefin_Sans } from "next/font/google";
 import React, { useEffect, useRef, useState } from "react";
 import { Location, Calendar2 } from "iconsax-react";
 import { ShuffleGrid } from "./hero";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const char = Charmonman({ subsets: ["latin"], weight: ["400", "700"] });
+const char = Josefin_Sans({ subsets: ["latin"] });
 
 const HEROSECTION = () => {
   const COUNTDOWN_FROM = "8/24/2024";
@@ -83,15 +83,15 @@ const HEROSECTION = () => {
                 </div>
               </div>
               <div>
-                <div className={`${char.className}`}>
-                  <h1 className="mt-6 text-6xl font-bold text-red-200 leading-[50px] max-md:max-w-full">
+                <div className={`${char.className} text-center`}>
+                  <h1 className="mt-6 text-6xl font-bold text-red-200 leading-[55px] max-md:max-w-full">
                     Game Changers for Global Impact
                     <span className="text-red-100"> 2024</span>
                     {/* <span className=``>Conference</span> */}
                     <span> Conference</span>
                   </h1>
                 </div>
-                <p className="mt-2 text-base leading-6 text-white max-md:max-w-full">
+                <p className="mt-2 text-base leading-6 text-white max-md:max-w-full text-center">
                   It&apos;s time to transform and inspire you to get in your A
                   with the relevant knowledge from one percent of top change
                   makers, impact leaders and entrepreneurs with peak

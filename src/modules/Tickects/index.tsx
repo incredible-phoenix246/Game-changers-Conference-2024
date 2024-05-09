@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/utils";
-import { Work_Sans, Dancing_Script } from "next/font/google";
+import { Work_Sans, Dancing_Script, Bebas_Neue } from "next/font/google";
 import Image from "next/image";
 import useMediaQuery from "@/hooks/use-media-query";
 import {
@@ -20,9 +20,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const dance = Dancing_Script({
+const dance = Bebas_Neue({
   subsets: ["latin"],
   display: "swap",
+  weight: ["400"],
 });
 
 interface PackageItemProps {
@@ -331,7 +332,9 @@ const Price = ({
                 )}
                 onClick={() => handleSelectPrice(item.price)}
               >
-                <p className={`${dance.className} text-xl md:text-3xl font-bold`}>
+                <p
+                  className={`${dance.className} text-xl md:text-3xl font-bold`}
+                >
                   {item.packageName}
                 </p>
                 <p className="text-sm">{item.price}</p>
