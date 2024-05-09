@@ -87,11 +87,18 @@ export const SPEAKERSECTION = () => {
 
 const ClipPathlink = () => {
   return (
-    <div className="md:divide-y divide-neutral-900 md:border border-neutral-900">
+    <div className="">
       <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x divide-neutral-900 w-full">
-        {dummyData.map((item) => (
+        {dummyData.slice(0, 6).map((item) => (
           <LinkBox key={item.id} {...item} />
         ))}
+      </div>
+      <div className="flex items-center justify-center w-full mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 place-content-center">
+          {dummyData.slice(6).map((item) => (
+            <LinkBox key={item.id} {...item} />
+          ))}
+        </div>
       </div>
     </div>
   );
