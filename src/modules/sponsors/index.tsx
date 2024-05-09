@@ -127,9 +127,9 @@ const SponsorsSection: React.FC = () => {
       </div>
 
       <section className="flex justify-center items-center px-16 py-20 max-md:px-5">
-        <div className="flex flex-col items-center mt-7 w-full max-w-[1170px] max-md:max-w-full">
-          <div className="flex flex-col justify-center self-stretch px-12 mt-28 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-            <div className="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
+        <div className="flex flex-col items-center justify-center mx-auto mt-7 w-full max-w-[1170px] max-md:max-w-full">
+          <div className="flex flex-col justify-center items-center w-full mx-auto self-stretch px-12 mt-28 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+            <div className="flex gap-5 items-center justify-between max-md:flex-wrap max-md:max-w-full">
               {sponsorImages.slice(0, 4).map((image) => (
                 <SponsorImage key={image.src} {...image} />
               ))}

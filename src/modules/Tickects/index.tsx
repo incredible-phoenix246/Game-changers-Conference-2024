@@ -7,6 +7,18 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/utils";
 import { Work_Sans, Dancing_Script } from "next/font/google";
+import Image from "next/image";
+import useMediaQuery from "@/hooks/use-media-query";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const dance = Dancing_Script({
   subsets: ["latin"],
@@ -20,43 +32,26 @@ interface PackageItemProps {
   isSelected: boolean;
 }
 
-const PackageItem: React.FC<PackageItemProps> = ({
-  imageSrc,
-  packageName,
-  price,
-  isSelected,
-}) => (
-  <div
-    className={`flex gap-4 p-6 whitespace-nowrap rounded-lg max-md:px-5 ${
-      isSelected ? "bg-pink-200 rounded-3xl" : ""
-    }`}
-  >
-    <img src={imageSrc} alt="" className="shrink-0 w-8 aspect-square" />
-    <div className={`flex-1 ${isSelected ? "text-pink-500" : "text-zinc-500"}`}>
-      {packageName}
-    </div>
-    <div
-      className={`text-right ${
-        isSelected ? "text-fuchsia-950" : "text-stone-300"
-      }`}
-    >
-      {price}
-    </div>
-  </div>
-);
-
 const packageData = [
   {
-    packageName: "Basic",
-    price: "$100",
+    packageName: "Standard Pass",
+    price: "₦10,000 {$7}",
   },
   {
-    packageName: "Standard",
-    price: "$200",
+    packageName: "Executive Pass",
+    price: "₦20,000 {$16}",
   },
   {
-    packageName: "Premium",
-    price: "$300",
+    packageName: "VIP Premium Pass",
+    price: "₦50,000 {$35}",
+  },
+  {
+    packageName: "VVIP-Platinum Pass",
+    price: "₦100,000 {$100}",
+  },
+  {
+    packageName: "VVIP-Corporate Pass",
+    price: "(₦200,000 - ₦500,000) {$150 - $400}",
   },
 ];
 
@@ -112,7 +107,7 @@ export function MyComponent() {
   };
 
   return (
-    <div className="flex flex-col px-5">
+    <div className="flex flex-col px-5 h-full py-6">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -292,14 +287,39 @@ const Price = ({
   selectedPrice,
   handleSelectPrice,
 }: PriceProps) => {
+  const { isMobile } = useMediaQuery();
   return (
     <>
       <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full bg-white md:mt-[50px] mb-[20px] md:mb-0 relative z-[99]">
         <div className="flex flex-col mt-7 text-xl font-bold leading-8 max-md:mt-10">
           <h2 className="text-2xl text-black">Choose a Package</h2>
-          <p className="mt-1 text-sm leading-5 text-black underline">
-            Learn More about pricing <a href="#">here</a>
-          </p>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                className="mt-1 text-sm leading-5 text-black underline text-start justify-start items-start flex hover:bg-none"
+              >
+                Learn More about Pricing here
+              </Button>
+            </SheetTrigger>
+            <SheetContent side={isMobile ? "bottom" : "left"}>
+              <SheetHeader>
+                <SheetTitle>Package Details</SheetTitle>
+              </SheetHeader>
+              <div className="grid gap-4 py-4 place-content-center">
+                <div className="flex items-center gap-4 w-full ">
+                  <div className="flex w-[300px] h-[300px] self-center mx-auto"></div>
+                </div>
+                <SheetDescription className="text-black"></SheetDescription>
+              </div>
+              <SheetFooter>
+                <SheetClose asChild>
+                  <Button>Close</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+
           <div className="mt-5 flex flex-col gap-y-3">
             {packageData.map((item) => (
               <Button
@@ -311,10 +331,10 @@ const Price = ({
                 )}
                 onClick={() => handleSelectPrice(item.price)}
               >
-                <p className={`${dance.className} text-3xl font-bold`}>
+                <p className={`${dance.className} text-xl md:text-3xl font-bold`}>
                   {item.packageName}
                 </p>
-                <p>{item.price}</p>
+                <p className="text-sm">{item.price}</p>
               </Button>
             ))}
           </div>
