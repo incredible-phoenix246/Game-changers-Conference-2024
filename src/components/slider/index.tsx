@@ -57,7 +57,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ color }) => {
           <div key={index}>
             <div className="flex justify-evenly items-center flex-row space-x-3 md:space-x-[30px]">
               <Image
-                src={color === "black" ? "/newLogo.png" : "/logo2.png"}
+                src={color === "black" ? "/newlogo.png" : "/logo2.png"}
                 alt={logo.alt}
                 width={155}
                 height={55}
