@@ -129,15 +129,28 @@ function Organizers() {
                     FORWARDLIVE
                   </h2>
                   <Paragraph className="mt-2">
-                    Duis porta quam arcu, vitae dignissim leo varius vel.
-                    Curabitur dignissim luctus lobortis. Donec eu pharetra
-                    ipsum. Fusce ornare suscipit augue sit amet tincidunt.
-                    Pellentesque sollicitudin eget dui eleifend ultrices.
-                    Vestibulum justo orci, ultrices ac porttitor nec,
-                    sollicitudin semper dolor. Curabitur eu consectetur velit.
-                    Suspendisse eleifend tristique semper. Phasellus sit amet
-                    consequat lacus. Aenean auctor eros nec ipsum auctor, quis
-                    porta lectus ultricies.
+                    Welcome to the Number #1 life transformation gathering,
+                    where lives are inspired to greatness with the best support
+                    system you could ever imagine. Increase your network and
+                    connect with the best minds in diverse sectors and
+                    industries across the country. We are building a world class
+                    leadership live session and the largest conference of
+                    emerging thought leaders and excited to have you experience
+                    the transformation for yourself. FORWARD is an all-time
+                    leadership and life transformational live conference for
+                    those desirous of growth. A curated live expression of
+                    Rotiba Emmanuel (REO) a global leadership and transformation
+                    speaker and other Thought and business leaders who are the
+                    best in the game and at the top of their sectors. For over a
+                    decade REO has continued to create platforms for positive
+                    life transformation and global impact. For Over a decade
+                    Rotiba Emmanuel has spoken to over 10 Countries around the
+                    world. Just to name a few (London (UK), Canada, Italy,
+                    Ghana, Netherlands, Hungary, Nigeria etc.) impacting young
+                    people. We are bringing you the opportunity to be in the
+                    same room with the top leaders, career experts, and chief
+                    executives in various sectors who embody great positive
+                    values and have shown results.
                   </Paragraph>
                 </div>
               </section>

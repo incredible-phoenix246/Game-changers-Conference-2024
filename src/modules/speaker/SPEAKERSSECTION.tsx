@@ -280,8 +280,9 @@ const dummyData = [
   {
     id: 1,
     img: "/speakers/speaker1.jpg",
-    name: "John Doe",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Dr Foy",
+    desc: `Dr Foy is a thought leader, public speaker, entertainment guru and marketing expert guru. Through Energize Music, he is on a mission to impact and empower generations of artists whose music will influence systems and cultures. 
+`,
     link: [
       {
         platform: "LinkedIn",
@@ -296,8 +297,9 @@ const dummyData = [
   {
     id: 2,
     img: "/speakers/speaker2.jpg",
-    name: "Jane Smith",
-    desc: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: "Jimi Tewe",
+    desc: `Jimi Tewe, is a mentor, global executive coach, leader and transformational specialist with two decades of experience garners in HR Consulting. He is called the King Maker and this because he has raised thousands of emerging leaders to become apostles in the market place.
+`,
     link: [
       {
         platform: "LinkedIn",
@@ -313,8 +315,9 @@ const dummyData = [
   {
     id: 3,
     img: "/speakers/speaker3.jpg",
-    name: "Alice Johnson",
-    desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "Gusi Tobby Lord-Williams",
+    desc: `A social impact and influence strategist and the Executive Director, GirHub Africa. She is known for her value driven approach to individuals, organizations and the society. She is referred to as LORD-T, the Connectologist and through her well curated and luxurious lifestyle events, she has linked many to valuable and global relationships that they have leveraged on.
+`,
     link: [
       {
         platform: "LinkedIn",
@@ -329,9 +332,11 @@ const dummyData = [
   },
   {
     id: 4,
-    img: "/speakers/speaker4.jpg",
-    name: "Michael Brown",
-    desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    img: "/speakers/speaker4.JPG",
+    name: "Dr Jamie Pajoel",
+    desc: `Dr. Jamie Pajoel is a globally recognized Leadership Development Coach, Is renowned for his impactful training of government officials, industry leaders, and managers worldwide.
+As a seasoned Leadership and Management Expert, he specializes in Human Capital Development through innovative approaches in Organizational Leadership, Process Simplification, Emotional Intelligence, and Sales Leadership.
+With a wealth of experience, he remains a sought-after figure, contributing significantly to the success of organizations on an international scale.`,
     link: [
       {
         platform: "LinkedIn",
@@ -346,9 +351,11 @@ const dummyData = [
   },
   {
     id: 5,
-    img: "/speakers/speaker1.jpg",
-    name: "Emily Wilson",
-    desc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    img: "/speakers/speaker5.JPG",
+    name: "Pastor Brite",
+    desc: `Pastor Brite Egwougu, resident pastor Celebration Church International, Toronto and anointed gospel singer.
+Pastor Brite shares tested and verified Bible principles that transcend time. His leadership style serves as an inspiration to the people of CCI Toronto and many young people around the world.
+As the Pastor of a vibrant church, he has held many by their hands and helped them on their journey to greatness.`,
     link: [
       {
         platform: "LinkedIn",
@@ -362,9 +369,47 @@ const dummyData = [
   },
   {
     id: 6,
-    img: "/speakers/speaker2.jpg",
-    name: "David Lee",
-    desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    img: "/speakers/speaker6.JPG",
+    name: "Pastor Tinu Asiegbeme",
+    desc: `Pastor Tinu Asegieme is a distinguished global relationship speaker and a dedicated preacher of the gospel. Her fervent commitment is rooted in a profound desire to witness women embrace their purpose and fulfill the divine call upon their lives.
+Her impactful ministry has reached women across the globe, liberating them from the shackles of the enemy.
+Beyond her dedicated focus on women, Pastor Tinu is deeply passionate about fostering the establishment of robust and flourishing relationships and marriages, exemplifying her broader commitment to the well-being of individuals.`,
+    link: [
+      {
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/speaker1",
+      },
+      {
+        platform: "Twitter",
+        url: "https://twitter.com/speaker1",
+      },
+    ],
+  },
+  {
+    id: 7,
+    img: "/speakers/speaker7.JPG",
+    name: "Wantaise Davies",
+    desc: `Wantaise Davis is not just a respected Motivational speaker and Manifestation Coach; she's a beacon of inspiration for many.
+Her personal journey, marked by persistent self-doubt, the fear of falling short of expectations, and a negative mindset, resonates deeply with people today.
+Through her guidance, thousands have been enabled to tap into their innate capacity.`,
+    link: [
+      {
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/speaker1",
+      },
+      {
+        platform: "Twitter",
+        url: "https://twitter.com/speaker1",
+      },
+    ],
+  },
+  {
+    id: 8,
+    img: "/speakers/speaker8.JPG",
+    name: "Wantaise Davies",
+    desc: `Wantaise Davis is not just a respected Motivational speaker and Manifestation Coach; she's a beacon of inspiration for many.
+Her personal journey, marked by persistent self-doubt, the fear of falling short of expectations, and a negative mindset, resonates deeply with people today.
+Through her guidance, thousands have been enabled to tap into their innate capacity.`,
     link: [
       {
         platform: "LinkedIn",

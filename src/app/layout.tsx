@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
+import { Work_Sans, Roboto } from "next/font/google";
 import "../styles/globals.scss";
 import { Toaster } from "@/components/ui/toaster";
 
 import StateContextProvider from "@/context/StateCtx";
 
-const workSans = Work_Sans({
+const workSans = Roboto({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-work-sans",
+  weight: ["100", "300", "400", "500", "700", "900"]
+  // variable: "--font-work-sans",
 });
 
 const currentYear = new Date().getFullYear().toString();
