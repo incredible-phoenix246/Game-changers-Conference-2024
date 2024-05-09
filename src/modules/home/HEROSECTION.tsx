@@ -5,7 +5,7 @@ import {
   CountdownItem,
   CountdownItemsec,
 } from "@/components/countdown";
-import { Work_Sans, Charmonman, Josefin_Sans } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import React, { useEffect, useRef, useState } from "react";
 import { Location, Calendar2 } from "iconsax-react";
 import { ShuffleGrid } from "./hero";
@@ -87,7 +87,6 @@ const HEROSECTION = () => {
                   <h1 className="mt-6 text-6xl font-bold text-red-200 leading-[55px] max-md:max-w-full">
                     Game Changers for Global Impact
                     <span className="text-red-100"> 2024</span>
-                    {/* <span className=``>Conference</span> */}
                     <span> Conference</span>
                   </h1>
                 </div>
@@ -108,7 +107,6 @@ const HEROSECTION = () => {
             </div>
           </div>
         </div>
-        {/* <div className="items-start w-full"> */}
       </div>
     </section>
   );
