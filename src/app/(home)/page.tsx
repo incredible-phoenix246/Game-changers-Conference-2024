@@ -5,6 +5,8 @@ import Features from "@/modules/features";
 import { SPEAKERSECTION } from "@/modules/speaker/SPEAKERSSECTION";
 import { MyComponent } from "@/modules/Tickects";
 import LogoCarousel from "@/components/slider";
+import SponsorsSection from "@/modules/sponsors";
+import { Organizers } from "@/modules/org";
 
 const HOME = () => {
   return (
@@ -17,6 +19,9 @@ const HOME = () => {
       <LogoCarousel color="white" />
       <MyComponent />
       <LogoCarousel color="black" />
+      <SponsorsSection />
+      <LogoCarousel color="white" />
+      <Organizers />
     </>
   );
 };
