@@ -95,7 +95,9 @@ const HEROSECTION = () => {
                   makers, impact leaders and entrepreneurs with peak
                   performance.
                 </p>
-                <button className="justify-center self-start px-10 py-4 mt-10 text-base font-medium leading-6 text-center text-white bg-red-200 shadow-2xl rounded-[400px] max-md:px-5">
+                <button 
+                className="justify-center self-start px-10 py-4 mt-10 text-base font-medium leading-6 text-center text-white bg-red-200 shadow-2xl rounded-[400px] max-md:px-5"
+                >
                   Learn More
                 </button>
               </div>

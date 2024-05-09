@@ -5,6 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
+import { cn } from "@/utils";
+import { Work_Sans, Dancing_Script } from "next/font/google";
+
+const dance = Dancing_Script({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 interface PackageItemProps {
   imageSrc: string;
@@ -40,27 +47,23 @@ const PackageItem: React.FC<PackageItemProps> = ({
 
 const packageData = [
   {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/992826a5d401dda76ab88f3b725802609a49953f98ccd065043548b9892c3726?apiKey=252f8d5a726747838fcb04939a832fc3&",
     packageName: "Basic",
     price: "$100",
-    isSelected: false,
   },
   {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/e739cbb8083cfe35d01f9987b821aa2f551a66a931713318fb4c3dc5695438df?apiKey=252f8d5a726747838fcb04939a832fc3&",
     packageName: "Standard",
     price: "$200",
-    isSelected: false,
   },
   {
-    imageSrc:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/2ee7025e1738c984f1b3229cbb5ff1138f7582861a2971cee84e0b5d85acb595?apiKey=252f8d5a726747838fcb04939a832fc3&",
     packageName: "Premium",
     price: "$300",
-    isSelected: true,
   },
 ];
+
+interface Package {
+  packageName: string;
+  price: string;
+}
 
 export function MyComponent() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -102,6 +105,12 @@ export function MyComponent() {
     text.style.fontSize = max + "px";
   };
 
+  const [selectedPrice, setSelectedPrice] = React.useState<string>("");
+
+  const handleSelectPrice = (packageName: string) => {
+    setSelectedPrice(packageName);
+  };
+
   return (
     <div className="flex flex-col px-5">
       <div ref={containerRef} className="px-4 py-12 relative">
@@ -120,24 +129,18 @@ export function MyComponent() {
           className="top-0 absolute left-0 mx-auto whitespace-nowrap text-center font-bold uppercase text-transparent outline-4 outline-red-100 p-2 font-outline-2 opacity-[30%]"
           ref={textRef}
         >
-          BOOKING
+          TICKETS
         </span>
       </div>
       <div className="w-full max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col mt-7 text-xl font-bold leading-8 max-md:mt-10">
-              <h2 className="text-2xl text-black">Choose a Package</h2>
-              <p className="mt-1 text-sm leading-5 text-black underline">
-                Learn More about pricing <a href="#">here</a>
-              </p>
-              {packageData.map((item, index) => (
-                <PackageItem key={index} {...item} />
-              ))}
-            </div>
-          </div>
+          <Price
+            packageData={packageData}
+            selectedPrice={selectedPrice}
+            handleSelectPrice={handleSelectPrice}
+          />
           <div className="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
-            <Form />
+            <Form selectedPrice={selectedPrice} />
           </div>
         </div>
       </div>
@@ -145,26 +148,50 @@ export function MyComponent() {
   );
 }
 
-const Form = () => {
+interface FormProps {
+  selectedPrice: string;
+}
+
+const Form = ({ selectedPrice }: FormProps) => {
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
-    npaNumber: "",
-    department: "",
+    phone: "",
+    comment: "",
   });
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const isDisabled = !formData.name && !formData.phone && !formData.email;
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    toast({
+      title: `Ticket Secured! ${formData.name}`,
+      description: "Your ticket has been sent to your email.",
+    });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      comment: "",
+    });
+  };
+
   return (
     <>
-      <div className="w-full items-center mx-auto container justify-center md:mt-[50px] relative z-[999]">
+      <div className="w-full items-center md:container justify-center md:mt-[50px] relative z-[99]">
         {/* className="w-full " */}
         <form
+          onSubmit={handleSubmit}
           action=""
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-dashed border-neutral-200 stroke-[1px] stroke-neutral-200"
+          className="bg-white md:shadow-md rounded md:px-8 pt-6 pb-8 mb-4 md:border border-dashed border-neutral-200 stroke-[1px] stroke-neutral-200"
         >
           <div className="mb-4">
             <Label
@@ -179,12 +206,14 @@ const Form = () => {
               type="text"
               name="name"
               placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
             <Label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="npaNumber"
+              htmlFor="phone"
             >
               Phone Number
             </Label>
@@ -194,6 +223,8 @@ const Form = () => {
               type="tel"
               name="phone"
               placeholder="(+234) 123 456 78"
+              value={formData.phone}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
@@ -207,26 +238,87 @@ const Form = () => {
               className="shadow appearance-none h-12 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
+              name="email"
               placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-4">
             <Label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
+              htmlFor="comment"
             >
-              Email
+              Additional Comment
             </Label>
             <textarea
-              // onChange={(e) => setCommentText(e.target.value)}
-              // value={commentText}
               name="comment"
               id="comment"
               placeholder="Leave a comment"
+              value={formData.comment}
+              onChange={handleChange}
               className="w-full rounded-md border border-gray-200 md:py-4 py-2 px-2 md:px-4 outline-none focus-visible:border focus-visible:border-red-100  h-[150px] sm:h-[193px] resize-none text-sm sm:text-base"
             />
+            <div className="flex items-center justify-between w-full">
+              {selectedPrice && (
+                <Button
+                  disabled={isDisabled}
+                  type="submit"
+                  className="justify-center self-start px-10 py-4 mt-10 text-base font-medium leading-6 text-center h-[56px] text-white bg-red-200 shadow-2xl rounded-[400px] max-md:px-5"
+                >
+                  Get your Ticket
+                </Button>
+              )}
+
+              <p className={`${dance.className} text-3xl font-bold`}>
+                {selectedPrice}
+              </p>
+            </div>
           </div>
         </form>
+      </div>
+    </>
+  );
+};
+
+interface PriceProps {
+  packageData: Package[];
+  selectedPrice: string;
+  handleSelectPrice: (price: string) => void;
+}
+
+const Price = ({
+  packageData,
+  selectedPrice,
+  handleSelectPrice,
+}: PriceProps) => {
+  return (
+    <>
+      <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full bg-white md:mt-[50px] mb-[20px] md:mb-0 relative z-[99]">
+        <div className="flex flex-col mt-7 text-xl font-bold leading-8 max-md:mt-10">
+          <h2 className="text-2xl text-black">Choose a Package</h2>
+          <p className="mt-1 text-sm leading-5 text-black underline">
+            Learn More about pricing <a href="#">here</a>
+          </p>
+          <div className="mt-5 flex flex-col gap-y-3">
+            {packageData.map((item) => (
+              <Button
+                key={item.packageName}
+                className={cn(
+                  "flex items-center justify-between w-full h-[80px] bg-red-200 hover:bg-red-100 rounded-t-xl rounded-br-xl rounded-bl-none text-[24px] font-medium px-4",
+
+                  selectedPrice === item.price && "bg-black hover:bg-black"
+                )}
+                onClick={() => handleSelectPrice(item.price)}
+              >
+                <p className={`${dance.className} text-3xl font-bold`}>
+                  {item.packageName}
+                </p>
+                <p>{item.price}</p>
+              </Button>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
