@@ -78,7 +78,7 @@ function Organizers() {
     text.style.fontSize = max + "px";
   };
   return (
-    <div className="flex flex-col px-5" id="organizer">
+    <div className="flex flex-col px-5 bg-black" id="organizer">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">

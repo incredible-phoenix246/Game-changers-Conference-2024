@@ -7,6 +7,7 @@ import { MyComponent } from "@/modules/Tickects";
 import LogoCarousel from "@/components/slider";
 import SponsorsSection from "@/modules/sponsors";
 import { Organizers } from "@/modules/org";
+import { PriceSection } from "@/modules/price";
 
 const HOME = () => {
   return (
@@ -17,9 +18,11 @@ const HOME = () => {
       <LogoCarousel color="black" />
       <SPEAKERSECTION />
       <LogoCarousel color="white" />
-      <MyComponent />
+      <PriceSection />
       <LogoCarousel color="black" />
       <SponsorsSection />
+      <LogoCarousel color="black" />
+      <MyComponent />
       <LogoCarousel color="white" />
       <Organizers />
     </>
