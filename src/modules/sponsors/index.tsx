@@ -105,7 +105,7 @@ const SponsorsSection: React.FC = () => {
     text.style.fontSize = max + "px";
   };
   return (
-    <section className="flex flex-col px-5 bg-black">
+    <section className="flex flex-col px-5 bg-black items-center justify-center mx-auto">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -126,9 +126,9 @@ const SponsorsSection: React.FC = () => {
         </span>
       </div>
 
-      <section className="flex justify-center items-center px-16 py-20 max-md:px-5">
-        <div className="flex flex-col items-center justify-center mx-auto mt-7 w-full max-w-[1170px] max-md:max-w-full">
-          <div className="flex flex-col justify-center items-center w-full mx-auto self-stretch px-12 mt-28 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      <section className="flex justify-center items-center px-16 mx-auto md:py-20 pb-6 max-md:px-5">
+        <div className="flex flex-col items-center justify-center mx-auto md:mt-7 w-full max-w-[1170px] max-md:max-w-full">
+          <div className="flex flex-col justify-center items-center w-full mx-auto self-stretch px-12 max-md:px-5 max-md:mt-10 max-md:max-w-full">
             <div className="flex gap-5 items-center justify-between max-md:flex-wrap max-md:max-w-full">
               {sponsorImages.slice(0, 4).map((image) => (
                 <SponsorImage key={image.src} {...image} />
