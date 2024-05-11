@@ -137,7 +137,7 @@ interface FormProps {
   selectedPrice: string;
 }
 
-const Form = ({ selectedPrice }: FormProps) => {
+export const Form = ({ selectedPrice }: FormProps) => {
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -176,7 +176,7 @@ const Form = ({ selectedPrice }: FormProps) => {
         <form
           onSubmit={handleSubmit}
           action=""
-          className="bg-white md:shadow-md rounded md:px-8 pt-6 pb-8 mb-4 md:border border-dashed border-neutral-200 stroke-[1px] stroke-neutral-200"
+          // className="bg-white md:shadow-md rounded md:px-8 pt-6 pb-8 mb-4 md:border border-dashed border-neutral-200 stroke-[1px] stroke-neutral-200"
         >
           <div className="mb-4">
             <Label
@@ -256,7 +256,7 @@ const Form = ({ selectedPrice }: FormProps) => {
               )}
 
               <p className={`${dance.className} text-3xl font-bold`}>
-                {selectedPrice}
+                ${selectedPrice}
               </p>
             </div>
           </div>

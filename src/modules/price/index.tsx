@@ -5,8 +5,18 @@ import React from "react";
 import Slider from "react-slick";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Ticket } from "iconsax-react";
+import { Form } from "../Tickects";
 
 const PriceSection = () => {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -199,6 +209,7 @@ interface TicketsCardProps {
 
 const TicketsCard = ({ ticket }: TicketsCardProps) => {
   const { replace } = useRouter();
+  const [price, setSelectedprice] = React.useState<string>();
   return (
     <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none items-center justify-center bg-white">
       <div className="p-8 sm:p-10 lg:flex-auto">
@@ -208,7 +219,7 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
         <p className="mt-6 text-base leading-7 text-gray-600">{ticket.desc}</p>
         <div className="mt-10 flex items-center gap-x-4">
           <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">
-            What’s included
+            What&apos;s included
           </h4>
           <div className="h-px flex-auto bg-gray-100" />
         </div>
@@ -246,15 +257,30 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
                 naria
               </span>
             </p>
-            <Button
-              // asChild
-              onClick={() => replace(`#price?price=${ticket.price.usd}`)}
-              className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Get Ticket
-            </Button>
+
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  // @ts-ignore
+                  onClick={() => setSelectedprice(ticket.price.usd)}
+                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Get Ticket
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Make Reservation</SheetTitle>
+                  {/* <SheetDescription>
+                    Make changes to your profile here. Click save when you're
+                    done.
+                  </SheetDescription> */}
+                </SheetHeader>
+                <Form selectedPrice={price!} />
+              </SheetContent>
+            </Sheet>
             <p className="mt-6 text-xs leading-5 text-gray-600">
-              Invoices and receipts available for easy company reimbursement
+              Tickects will be sent immediately to your provided email address
             </p>
           </div>
         </div>
