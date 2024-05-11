@@ -95,7 +95,7 @@ const PriceSection = () => {
         className="max-w-7xl px-2 lg:px-8 self-center md:mx-auto"
       >
         {Tickets.map((ticket) => (
-          <TicketsCard ticket={ticket} />
+          <TicketsCard key={ticket.id} ticket={ticket} />
         ))}
       </Slider>
     </section>
