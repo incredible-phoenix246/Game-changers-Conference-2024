@@ -7,18 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/utils";
 import { Work_Sans, Dancing_Script, Bebas_Neue } from "next/font/google";
-import Image from "next/image";
 import useMediaQuery from "@/hooks/use-media-query";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 
 const dance = Bebas_Neue({
   subsets: ["latin"],
@@ -108,7 +97,7 @@ export function MyComponent() {
   };
 
   return (
-    <div className="flex flex-col px-5 h-full py-6">
+    <div className="flex flex-col px-5 h-full py-6" id="price">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -294,7 +283,7 @@ const Price = ({
       <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full bg-white md:mt-[50px] mb-[20px] md:mb-0 relative z-[99]">
         <div className="flex flex-col mt-7 text-xl font-bold leading-8 max-md:mt-10">
           <h2 className="text-2xl text-black">Choose a Package</h2>
-          <Sheet>
+          {/* <Sheet>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -319,7 +308,7 @@ const Price = ({
                 </SheetClose>
               </SheetFooter>
             </SheetContent>
-          </Sheet>
+          </Sheet> */}
 
           <div className="mt-5 flex flex-col gap-y-3">
             {packageData.map((item) => (

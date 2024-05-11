@@ -2,15 +2,11 @@
 
 import { Check } from "lucide-react";
 import React from "react";
-import Autoplay from "embla-carousel-autoplay";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import Slider from "react-slick";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Ticket } from "iconsax-react";
 
 const PriceSection = () => {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -51,8 +47,19 @@ const PriceSection = () => {
 
     text.style.fontSize = max + "px";
   };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    arrows: false,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+  };
   return (
-    <section className="pb-[60px] container">
+    <section className="pb-[60px] w-full">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -72,24 +79,15 @@ const PriceSection = () => {
           PRICE
         </span>
       </div>
-      <div>
-        <Carousel
-          className="max-w-7xl px-6 lg:px-8"
-          plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
-        >
-          <CarouselContent>
-            {Tickets.map((ticket) => (
-              <CarouselItem key={ticket.id}>
-                <TicketsCard ticket={ticket} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
+
+      <Slider
+        {...settings}
+        className="max-w-7xl px-2 lg:px-8 self-center md:mx-auto"
+      >
+        {Tickets.map((ticket) => (
+          <TicketsCard ticket={ticket} />
+        ))}
+      </Slider>
     </section>
   );
 };
@@ -105,19 +103,9 @@ const Tickets: Ticket[] = [
       "Networking Opportunities",
       "General seating row",
     ],
-    // price: {
-    //   usd: {
-    //     earlyBird: 7,
-    //     regular: 10,
-    //   },
-    //   naira: {
-    //     earlyBird: 4,
-    //     regular: 5,
-    //   },
-    // },
     price: {
-      usd: "7-10", // Adjusted to string type
-      naira: "4-5", // Adjusted to string type
+      usd: "7-10",
+      naira: "4-5k",
     },
   },
   {
@@ -133,7 +121,7 @@ const Tickets: Ticket[] = [
     ],
     price: {
       usd: 16,
-      naira: 20,
+      naira: "20k",
     },
   },
   {
@@ -151,7 +139,7 @@ const Tickets: Ticket[] = [
     ],
     price: {
       usd: 38,
-      naira: 50,
+      naira: "50k",
     },
   },
   {
@@ -168,7 +156,7 @@ const Tickets: Ticket[] = [
     ],
     price: {
       usd: 75,
-      naira: 100,
+      naira: "100k",
     },
   },
   {
@@ -188,8 +176,8 @@ const Tickets: Ticket[] = [
       "Certificate of Recognition as a FORWARD-THINKING ORGANIZATION",
     ],
     price: {
-      usd: "150-384", // Adjusted to string type
-      naira: "200-500k Above", // Adjusted to string type
+      usd: "150-384",
+      naira: "200-500k",
     },
   },
 ];
@@ -210,6 +198,7 @@ interface TicketsCardProps {
 }
 
 const TicketsCard = ({ ticket }: TicketsCardProps) => {
+  const { replace } = useRouter();
   return (
     <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none items-center justify-center bg-white">
       <div className="p-8 sm:p-10 lg:flex-auto">
@@ -239,7 +228,7 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
         <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
           <div className="mx-auto max-w-xs px-8">
             <p className="text-base font-semibold text-gray-600">
-              Pay once, own it forever
+              Pay now or Book your Ticket
             </p>
             <p className="mt-6 flex items-baseline justify-center gap-x-2">
               <span className="text-5xl font-bold tracking-tight text-gray-900">
@@ -249,12 +238,21 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
                 USD
               </span>
             </p>
-            <a
-              href="#"
+            <p className="mt-6 flex items-baseline justify-center gap-x-2">
+              <span className="text-5xl font-bold tracking-tight text-gray-900">
+                {`₦${ticket.price.naira}`}
+              </span>
+              <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                naria
+              </span>
+            </p>
+            <Button
+              // asChild
+              onClick={() => replace(`#price?price=${ticket.price.usd}`)}
               className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Get access
-            </a>
+              Get Ticket
+            </Button>
             <p className="mt-6 text-xs leading-5 text-gray-600">
               Invoices and receipts available for easy company reimbursement
             </p>

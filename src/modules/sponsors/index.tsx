@@ -128,13 +128,13 @@ const SponsorsSection: React.FC = () => {
 
       <section className="flex justify-center items-center px-16 mx-auto md:py-20 pb-6 max-md:px-5">
         <div className="flex flex-col items-center justify-center mx-auto md:mt-7 w-full max-w-[1170px] max-md:max-w-full">
-          <div className="flex flex-col justify-center items-center w-full mx-auto self-stretch px-12 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-            <div className="flex gap-5 items-center justify-between max-md:flex-wrap max-md:max-w-full">
+          <div className="flex flex-col justify-center items-center w-full mx-auto px-12 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+            <div className="flex gap-5 items-center justify-between max-md:flex-wrap max-md:max-w-full w-full">
               {sponsorImages.slice(0, 4).map((image) => (
                 <SponsorImage key={image.src} {...image} />
               ))}
             </div>
-            <div className="flex gap-5 justify-between items-center mt-16 max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+            <div className="flex gap-5 justify-between items-center mt-16 max-md:flex-wrap max-md:mt-10 max-md:max-w-full w-full">
               {sponsorImages.slice(4).map((image) => (
                 <SponsorImage key={image.src} {...image} />
               ))}

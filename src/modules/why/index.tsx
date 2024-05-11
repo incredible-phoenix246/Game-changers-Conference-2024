@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { VscLightbulbSparkle } from "react-icons/vsc";
-import { type Icon } from "iconsax-react";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
 
@@ -122,91 +121,6 @@ export default MyComponent;
 
 // 270 320hover
 
-export function Widget() {
-  return (
-    <div className="flex justify-center items-center h-screen bg-pink-100">
-      <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-full bg-pink-500 text-white flex justify-center items-center text-center p-12 shadow-lg">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-8 h-8 mb-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 3v4.5m0 9V21m7.5-12h-4.5m-9 0H4.5m15.75 3a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"
-              />
-            </svg>
-            <div>Inspiration</div>
-          </div>
-        </div>
-        <div className="rounded-full bg-white text-zinc-800 flex justify-center items-center text-center p-12 shadow-lg">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-8 h-8 mb-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 6v6m0 0v6m0-6h6m-6 0H6m12 3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <div>Network</div>
-          </div>
-        </div>
-        <div className="rounded-full bg-white text-zinc-800 flex justify-center items-center text-center p-12 shadow-lg">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-8 h-8 mb-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 3v18m0 0l3.5-3.5M12 21l-3.5-3.5M21 12H3m0 0l3.5-3.5M3 12l3.5 3.5m15-3.5l-3.5 3.5m3.5-3.5l-3.5-3.5"
-              />
-            </svg>
-            <div>Rewards</div>
-          </div>
-        </div>
-        <div className="rounded-full bg-white text-zinc-800 flex justify-center items-center text-center p-12 shadow-lg">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-8 h-8 mb-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.862 16.862a1.5 1.5 0 102.121 2.121 1.5 1.5 0 00-2.121-2.121zM7.138 7.138a1.5 1.5 0 10-2.121-2.121 1.5 1.5 0 002.121 2.121zM12 3v3m0 12v3m9-9h-3m-12 0H3m14.121-5.121l-2.121 2.121m-8.242 8.242l-2.121 2.121m2.121-12.728l2.121 2.121m8.242 8.242l2.121 2.121"
-              />
-            </svg>
-            <div>Skills</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 const tabs = ["Home", "Search", "About", "FAQ"];
 
 const ChipTabs = () => {
@@ -256,4 +170,139 @@ const Chip = ({
   );
 };
 
-export { ChipTabs };
+const WHYSECTION = () => {
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const textRef = React.useRef<HTMLSpanElement | null>(null);
+
+  React.useEffect(() => {
+    resizeText();
+
+    window.addEventListener("resize", resizeText);
+
+    return () => {
+      window.removeEventListener("resize", resizeText);
+    };
+  }, []);
+
+  const resizeText = () => {
+    const container = containerRef.current;
+    const text = textRef.current;
+
+    if (!container || !text) {
+      return;
+    }
+
+    const containerWidth = container.offsetWidth;
+    let min = 1;
+    let max = 2500;
+
+    while (min <= max) {
+      const mid = Math.floor((min + max) / 2);
+      text.style.fontSize = mid + "px";
+
+      if (text.offsetWidth <= containerWidth) {
+        min = mid + 1;
+      } else {
+        max = mid - 1;
+      }
+    }
+
+    text.style.fontSize = max + "px";
+  };
+  return (
+    <section>
+      <div ref={containerRef} className="px-4 py-12 relative">
+        <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
+          <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
+            Reasons Why You Need To Be At{" "}
+            <span className="text-red-100">Forward 24</span>
+          </h2>
+
+          <p className="mt-5 w-full text-base tracking-normal text-black max-md:max-w-full">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            malesuada tristique justo quis ultrices. Morbi gravida dignissim
+            lectus, et semper nulla varius a
+          </p>
+        </div>
+        <span
+          className="top-0 absolute left-0 mx-auto whitespace-nowrap text-center font-bold uppercase text-transparent outline-4 outline-red-100 p-2 font-outline-2 opacity-[30%]"
+          ref={textRef}
+        >
+          JUSTIFICATION
+        </span>
+      </div>
+      <div className="relative">
+        <MAIN />
+      </div>
+    </section>
+  );
+};
+
+export { ChipTabs, WHYSECTION };
+
+export function MAIN() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <span className="text-sm font-semibold uppercase tracking-wide text-red-300">
+            [Incredible Experience]
+          </span>
+          <h2 className="mt-2 text-3xl font-extrabold text-zinc-900 dark:text-white">
+            10 Reasons Why You Need To Be At
+            <span className="text-red-300 text-3xl md:text-6xl italic">
+              FORWARD 24
+            </span>
+          </h2>
+          <ul className="mt-8 space-y-4">
+            <li>
+              <strong>Reason #1:</strong> A-rated Five-star speakers list you
+              don&apos;t commonly have access to
+            </li>
+            <li>
+              <strong>Reason #2:</strong> Insights from Captain of Industries
+            </li>
+            <li>
+              <strong>Reason #3:</strong> Opportunity to grow your ideas by
+              connecting with like minds.
+            </li>
+            <li>
+              <strong>Reason #4:</strong> Forward inspiration that takes you to
+              the next level.
+            </li>
+            <li>
+              <strong>Reason #5:</strong> Experience of a lifetime personal
+              transformation
+            </li>
+            <li>
+              <strong>Reason #6:</strong> Best platform to network with quality
+              people
+            </li>
+            <li>
+              <strong>Reason #7:</strong> Get strategies to take actionable
+              steps
+            </li>
+            <li>
+              <strong>Reason #8:</strong> Practical tools for successful life,
+              business and career
+            </li>
+            <li>
+              <strong>Reason #9:</strong> “Forward” will ignite your passion for
+              progress
+            </li>
+            <li>
+              <strong>Reason #10:</strong> It&apos;s time to go FORWARD ……
+            </li>
+          </ul>
+        </div>
+        <div className="items-center justify-center h-full flex">
+          <img
+            src="https://placehold.co/600x400"
+            alt="Conference Image"
+            className="rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
