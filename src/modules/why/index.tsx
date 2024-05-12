@@ -296,10 +296,15 @@ export function MAIN() {
           </ul>
         </div>
         <div className="items-center justify-center h-full flex">
-          <img
-            src="https://placehold.co/600x400"
-            alt="Conference Image"
-            className="rounded-lg shadow-lg"
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/qv1afUOxfwU?si=n4s-dl_M3ZBsf_Jo&autoplay=1&mute=1&amp;start=100"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            // referrerpolicy="strict-origin-when-cross-origin"
+            // allowfullscreen
+            className="rounded-lg shadow-lg h-full w-full object-cover"
           />
         </div>
       </div>
