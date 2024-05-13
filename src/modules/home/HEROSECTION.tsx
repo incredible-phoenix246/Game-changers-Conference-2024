@@ -10,7 +10,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Location, Calendar2 } from "iconsax-react";
 import { ShuffleGrid } from "./hero";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Slider from "react-slick";
 
 const char = Josefin_Sans({ subsets: ["latin"] });
 
@@ -56,16 +58,71 @@ const HEROSECTION = () => {
     });
   };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    arrows: false,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: false,
+  };
+
   return (
     <section className="relative min-h-full bg-black">
-      <div className="w-full h-full top-0 left-0 absolute object-cover opacity-[30%] overflow-hidden px-8">
-        <ShuffleGrid />
+      <div className="w-full h-full top-0 left-0 absolute object-cover overflow-hidden opacity-[30%]">
+        {/* <ShuffleGrid /> */}
+        <Slider {...settings}>
+          {Images.map((image) => {
+            return (
+              <>
+                <div className="w-full h-full max-h-[720px]">
+                  <Image
+                    src={image}
+                    alt="hero image"
+                    width={1440}
+                    height={720}
+                    priority
+                    className="w-full h-full object-cover"
+                  />
+                  <Image
+                    src={image}
+                    alt="hero image"
+                    width={1440}
+                    height={720}
+                    priority
+                    className="w-full h-full object-cover flex md:hidden"
+                  />
+                  <Image
+                    src={image}
+                    alt="hero image"
+                    width={1440}
+                    height={720}
+                    priority
+                    className="w-full h-full object-cover flex md:hidden"
+                  />
+                </div>
+                {/* <div className="w-full h-full max-h-[650px] sm:hidden">
+                  <Image
+                    src={image}
+                    alt="hero image"
+                    width={1440}
+                    height={720}
+                    priority
+                    className="w-full h-full object-fit"
+                  />
+                </div> */}
+              </>
+            );
+          })}
+        </Slider>
       </div>
       <div className="container py-12 grid place-content-center md:w-[60%] items-center gap-8 relative z-10">
         <div className="items-center w-full">
           <div className="flex flex-col w-full  items-center justify-center">
             <div className="flex flex-col items-center justify-center w-full">
-              <div className="flex gap-1 md:gap-2 justify-between items-center w-full md:w-[60%]">
+              <div className="flex gap-1 md:gap-2 justify-between items-center w-full md:w-[60%] mt-[50px] md:mt-0 text-center">
                 <CountdownItemday num={remaining.days} text="days" />
                 <CountdownItem num={remaining.hours} text="hours" />
                 <CountdownItem num={remaining.minutes} text="minutes" />
@@ -83,19 +140,36 @@ const HEROSECTION = () => {
                 </div>
               </div>
               <div>
-                <div className={`${char.className} text-center`}>
-                  <h1 className="mt-6 text-6xl font-bold text-red-200 leading-[55px] max-md:max-w-full">
-                    Game Changers for Global Impact
-                    <span className="text-red-100"> 2024</span>
-                    <span> Conference</span>
-                  </h1>
+                {/* <div >
+                  
                 </div>
                 <p className="mt-2 text-base leading-6 text-white max-md:max-w-full text-center">
                   It&apos;s time to transform and inspire you to get in your A
                   with the relevant knowledge from one percent of top change
                   makers, impact leaders and entrepreneurs with peak
                   performance.
-                </p>
+                </p> */}
+                <div className="items-center justify-center w-full flex mx-auto">
+                  <Image
+                    src="/newlogo.png"
+                    alt="logo"
+                    width={500}
+                    height={150}
+                    className="self-center mt-5"
+                  />
+                </div>
+                <div className={`${char.className} text-center`}>
+                  <h1 className="mt-6 text-6xl font-bold text-red-200 leading-[55px] max-md:max-w-full hidden md:block">
+                    Game Changers for Global Impact
+                    <span className="text-red-100"> 2024</span>
+                    <span> Conference</span>
+                  </h1>
+                  <h1 className="mt-6 text-2xl font-bold text-red-200 leading-[25px] max-md:max-w-full block md:hidden">
+                    Game Changers for Global Impact
+                    <span className="text-red-100"> 2024</span>
+                    <span> Conference</span>
+                  </h1>
+                </div>
 
                 <Button
                   asChild
@@ -113,3 +187,5 @@ const HEROSECTION = () => {
 };
 
 export default HEROSECTION;
+
+const Images = ["/home1.jpg", "/home2.jpg", "/home3.jpg", "/home4.jpg"];
