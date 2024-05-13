@@ -5,7 +5,7 @@ import { MyComponent } from "@/modules/Tickects";
 import LogoCarousel from "@/components/slider";
 import SponsorsSection from "@/modules/sponsors";
 import { Organizers } from "@/modules/org";
-import { PriceSection } from "@/modules/price";
+import { FORMSHEET, PriceSection } from "@/modules/price";
 import { WHYSECTION } from "@/modules/why";
 
 const HOME = () => {
@@ -22,6 +22,7 @@ const HOME = () => {
       <SponsorsSection />
       <LogoCarousel color="white" />
       <Organizers />
+      <FORMSHEET />
     </>
   );
 };

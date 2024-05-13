@@ -7,6 +7,10 @@ interface StateContextProps {
   setShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
   ShowAdminSidebar: boolean;
   setShowAdminSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+  Showprice: boolean;
+  setShowprice: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedprice: string;
+  setSelectedrice: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const StateContext = createContext({} as StateContextProps);
@@ -14,6 +18,8 @@ export const StateContext = createContext({} as StateContextProps);
 const StateContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
   const [ShowAdminSidebar, setShowAdminSidebar] = React.useState(false);
+  const [Showprice, setShowprice] = React.useState(false);
+  const [selectedprice, setSelectedrice] = React.useState("");
 
   useEffect(() => {
     if (showMobileMenu) {
@@ -57,8 +63,21 @@ const StateContextProvider = ({ children }: { children: React.ReactNode }) => {
       setShowMobileMenu,
       ShowAdminSidebar,
       setShowAdminSidebar,
+      Showprice,
+      setShowprice,
+      selectedprice,
+      setSelectedrice,
     }),
-    [showMobileMenu, setShowMobileMenu, ShowAdminSidebar, setShowAdminSidebar]
+    [
+      showMobileMenu,
+      setShowMobileMenu,
+      ShowAdminSidebar,
+      setShowAdminSidebar,
+      Showprice,
+      setShowprice,
+      selectedprice,
+      setSelectedrice,
+    ]
   );
 
   return (

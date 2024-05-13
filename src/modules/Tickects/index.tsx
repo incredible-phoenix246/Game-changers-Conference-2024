@@ -8,6 +8,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/utils";
 import { Work_Sans, Dancing_Script, Bebas_Neue } from "next/font/google";
 import useMediaQuery from "@/hooks/use-media-query";
+import { useStateCtx } from "@/context/StateCtx";
 
 const dance = Bebas_Neue({
   subsets: ["latin"],
@@ -145,6 +146,7 @@ export const Form = ({ selectedPrice }: FormProps) => {
     comment: "",
   });
   const { toast } = useToast();
+  const { setShowprice } = useStateCtx();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -167,6 +169,7 @@ export const Form = ({ selectedPrice }: FormProps) => {
       phone: "",
       comment: "",
     });
+    setShowprice(false);
   };
 
   return (
@@ -256,7 +259,7 @@ export const Form = ({ selectedPrice }: FormProps) => {
               )}
 
               <p className={`${dance.className} text-3xl font-bold`}>
-                ${selectedPrice}
+                ₦{selectedPrice}
               </p>
             </div>
           </div>

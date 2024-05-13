@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import { Ticket } from "iconsax-react";
 import { Form } from "../Tickects";
+import { useStateCtx } from "@/context/StateCtx";
 
 const PriceSection = () => {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -209,7 +210,7 @@ interface TicketsCardProps {
 }
 
 const TicketsCard = ({ ticket }: TicketsCardProps) => {
-  const [price, setSelectedprice] = React.useState<string>();
+  const { setShowprice, setSelectedrice } = useStateCtx();
   return (
     <div
       key={ticket.id}
@@ -260,28 +261,15 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
                 naria
               </span>
             </p>
-
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button
-                  // @ts-ignore
-                  onClick={() => setSelectedprice(ticket.price.usd)}
-                  className="mt-10 block w-full rounded-md bg-red-100 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get Ticket
-                </Button>
-              </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>Make Reservation</SheetTitle>
-                  {/* <SheetDescription>
-                    Make changes to your profile here. Click save when you're
-                    done.
-                  </SheetDescription> */}
-                </SheetHeader>
-                <Form selectedPrice={price!} />
-              </SheetContent>
-            </Sheet>
+            <Button
+              onClick={() => {
+                // @ts-ignore
+                setSelectedrice(ticket.price.naira), setShowprice(true);
+              }}
+              className="mt-10 block w-full rounded-md bg-red-100 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Get Ticket
+            </Button>
             <p className="mt-6 text-xs leading-5 text-gray-600">
               Tickects will be sent immediately to your provided email address
             </p>
@@ -289,5 +277,19 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
         </div>
       </div>
     </div>
+  );
+};
+
+export const FORMSHEET = () => {
+  const { Showprice, setShowprice, selectedprice } = useStateCtx();
+  return (
+    <Sheet open={Showprice} onOpenChange={setShowprice}>
+      <SheetContent className="w-full px-0">
+        <SheetHeader className="px-5">
+          <SheetTitle>Make Reservation</SheetTitle>
+        </SheetHeader>
+        <Form selectedPrice={selectedprice} />
+      </SheetContent>
+    </Sheet>
   );
 };
