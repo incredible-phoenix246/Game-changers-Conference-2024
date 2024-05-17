@@ -2,10 +2,11 @@ import React from "react";
 import HEROSECTION from "@/modules/home/HEROSECTION";
 import { SPEAKERSECTION } from "@/modules/speaker/SPEAKERSSECTION";
 import { MyComponent } from "@/modules/Tickects";
+import Features from "@/modules/features";
 import LogoCarousel from "@/components/slider";
 import SponsorsSection from "@/modules/sponsors";
 import { Organizers } from "@/modules/org";
-import { FORMSHEET, PriceSection } from "@/modules/price";
+import { FORMSHEET, PriceSection, NewPriceSection } from "@/modules/price";
 import { WHYSECTION } from "@/modules/why";
 
 const HOME = () => {
@@ -14,10 +15,13 @@ const HOME = () => {
       <HEROSECTION />
       <LogoCarousel color="white" />
       <WHYSECTION />
+      <LogoCarousel color="red" />
+      <Features />
       <LogoCarousel color="black" />
       <SPEAKERSECTION />
       <LogoCarousel color="white" />
-      <PriceSection />
+      <NewPriceSection />
+      {/* <PriceSection /> */}
       <LogoCarousel color="black" />
       <SponsorsSection />
       <LogoCarousel color="white" />

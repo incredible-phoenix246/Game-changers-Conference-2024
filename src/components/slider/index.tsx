@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Slider from "react-slick";
 import LogoSlider from "../../../public/logoSlider.webp";
+import { cn } from "@/utils";
 
 const slides = [
   { alt: "Logo", src: LogoSlider },
@@ -12,7 +13,7 @@ const slides = [
   { alt: "Logo", src: LogoSlider },
 ];
 interface LogoCarouselProps {
-  color?: "black" | "white";
+  color?: "black" | "white" | "red";
 }
 
 const LogoCarousel: React.FC<LogoCarouselProps> = ({ color }) => {
@@ -51,7 +52,18 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ color }) => {
   };
 
   return (
-    <div className={`overflow-hidden p-2 w-full bg-${color}`}>
+    <div
+      className={cn(
+        "overflow-hidden p-2 w-full",
+        color === "black"
+          ? "bg-black"
+          : color === "white"
+          ? "bg-white"
+          : color === "red"
+          ? "bg-red-400"
+          : "bg-white"
+      )}
+    >
       <Slider {...settings}>
         {slides.map((logo, index) => (
           <div key={index}>

@@ -76,7 +76,7 @@ const HEROSECTION = () => {
         <Slider {...settings}>
           {Images.map((image) => {
             return (
-              <>
+              <div key={image}>
                 <div className="w-full h-full max-h-[720px]">
                   <Image
                     src={image}
@@ -103,17 +103,7 @@ const HEROSECTION = () => {
                     className="w-full h-full object-cover flex md:hidden"
                   />
                 </div>
-                {/* <div className="w-full h-full max-h-[650px] sm:hidden">
-                  <Image
-                    src={image}
-                    alt="hero image"
-                    width={1440}
-                    height={720}
-                    priority
-                    className="w-full h-full object-fit"
-                  />
-                </div> */}
-              </>
+              </div>
             );
           })}
         </Slider>
