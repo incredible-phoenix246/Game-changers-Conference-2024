@@ -210,7 +210,7 @@ const WHYSECTION = () => {
     text.style.fontSize = max + "px";
   };
   return (
-    <section>
+    <section className="bg-black">
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -218,7 +218,7 @@ const WHYSECTION = () => {
             <span className="text-red-100">Forward 24</span>
           </h2>
 
-          <p className="mt-5 w-full text-base tracking-normal text-black max-md:max-w-full">
+          <p className="mt-5 w-full text-base tracking-normal text-white max-md:max-w-full">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             malesuada tristique justo quis ultrices. Morbi gravida dignissim
             lectus, et semper nulla varius a
@@ -248,13 +248,13 @@ export function MAIN() {
           <span className="text-sm font-semibold uppercase tracking-wide text-red-300">
             [Incredible Experience]
           </span>
-          <h2 className="mt-2 text-3xl font-extrabold text-zinc-900 dark:text-white">
+          <h2 className="mt-2 text-3xl font-extrabold text-white">
             10 Reasons Why You Need To Be At
             <span className="text-red-300 text-3xl md:text-6xl italic">
               FORWARD 24
             </span>
           </h2>
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-8 space-y-4 text-white">
             <li>
               <strong>Reason #1:</strong> A-rated Five-star speakers list you
               don&apos;t commonly have access to

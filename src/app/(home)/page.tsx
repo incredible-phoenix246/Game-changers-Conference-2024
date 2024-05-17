@@ -14,18 +14,18 @@ const HOME = () => {
     <>
       <HEROSECTION />
       <LogoCarousel color="white" />
+      <Organizers />
+      <LogoCarousel color="black" />
       <WHYSECTION />
-      <LogoCarousel color="red" />
+      <LogoCarousel color="white" />
       <Features />
       <LogoCarousel color="black" />
       <SPEAKERSECTION />
       <LogoCarousel color="white" />
       <NewPriceSection />
-      {/* <PriceSection /> */}
       <LogoCarousel color="black" />
       <SponsorsSection />
       <LogoCarousel color="white" />
-      <Organizers />
       <FORMSHEET />
     </>
   );

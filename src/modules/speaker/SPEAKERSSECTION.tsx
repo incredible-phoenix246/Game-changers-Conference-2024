@@ -250,23 +250,6 @@ const LinkBox = ({
                     <SheetDescription className="text-black">
                       {desc}
                     </SheetDescription>
-                    <div className="flex gap-4 self-start mt-2">
-                      {link?.map((social) => (
-                        <Link
-                          key={social.url}
-                          href={social.url}
-                          className="flex justify-center items-center bg-red-400 rounded-md aspect-[1.07]"
-                        >
-                          <Image
-                            src={`/socials/${social.platform}.svg`}
-                            alt="Social image"
-                            width={40}
-                            height={40}
-                            loading="eager"
-                          />
-                        </Link>
-                      ))}
-                    </div>
                   </div>
                   <SheetFooter>
                     <SheetClose asChild>
