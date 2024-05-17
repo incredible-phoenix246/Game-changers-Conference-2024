@@ -1,13 +1,13 @@
 import React from "react";
 import HEROSECTION from "@/modules/home/HEROSECTION";
 import { SPEAKERSECTION } from "@/modules/speaker/SPEAKERSSECTION";
-import { MyComponent } from "@/modules/Tickects";
 import Features from "@/modules/features";
 import LogoCarousel from "@/components/slider";
 import SponsorsSection from "@/modules/sponsors";
 import { Organizers } from "@/modules/org";
-import { FORMSHEET, PriceSection, NewPriceSection } from "@/modules/price";
+import { NewPriceSection } from "@/modules/price";
 import { WHYSECTION } from "@/modules/why";
+import { HomeSection } from "@/modules/home/hero";
 
 const HOME = () => {
   return (
@@ -26,7 +26,8 @@ const HOME = () => {
       <LogoCarousel color="black" />
       <SponsorsSection />
       <LogoCarousel color="white" />
-      <FORMSHEET />
+      <HomeSection />
+      <LogoCarousel color="black" />
     </>
   );
 };

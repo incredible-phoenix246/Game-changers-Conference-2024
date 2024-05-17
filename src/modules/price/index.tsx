@@ -360,7 +360,7 @@ export const NewPriceSection = () => {
           </p>
         </div>
         <span
-          className="top-0 absolute left-0 mx-auto whitespace-nowrap text-center font-bold uppercase text-transparent outline-4 outline-red-100 p-2 font-outline-2 opacity-[30%]"
+          className="top-0 absolute left-0 mx-auto whitespace-nowrap text-center font-bold uppercase text-transparent outline-4 text-red-200 outline-red-100 p-2 font-outline-2 opacity-[30%]"
           ref={textRef}
         >
           PRICE

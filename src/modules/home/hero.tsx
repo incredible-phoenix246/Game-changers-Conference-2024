@@ -91,8 +91,18 @@ export const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 h-[450px] gap-1">
+    <div className="grid grid-cols-3 grid-rows-3 h-[550px] gap-1">
       {squares.map((sq) => sq)}
     </div>
+  );
+};
+
+export const HomeSection = () => {
+  return (
+    <>
+      <div className="overflow-hidden p-8">
+        <ShuffleGrid />
+      </div>
+    </>
   );
 };

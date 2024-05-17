@@ -143,7 +143,7 @@ function Organizers() {
                 href={"/about"}
                 className="w-full justify-end text-end text-red-100 underline capitalize text-xl"
               >
-                read more
+                read more ...
               </Link>
             </div>
           </div>
