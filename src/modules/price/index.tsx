@@ -441,7 +441,16 @@ export const NewPriceSection = () => {
           {activeTab === "individual" &&
             individualTickets.map((ticket) => (
               <div
-                className="flip-card w-full min-w-[385px] min-h-[570px] max-w-sm h-[750px]"
+                className={cn(
+                  "flip-card w-full min-w-[385px] min-h-[570px] max-w-sm",
+                  ticket.id === 2
+                    ? "h-[700px]"
+                    : ticket.id === 3
+                    ? "h-[730px]"
+                    : ticket.id === 4
+                    ? "h-[750px]"
+                    : ""
+                )}
                 key={ticket.id}
               >
                 <div className="flip-card-inner w-full h-full">
@@ -512,7 +521,7 @@ export const NewPriceSection = () => {
           {activeTab === "group" &&
             groupTickets.map((ticket) => (
               <div
-                className="flip-card w-full min-w-[385px] min-h-[570px] max-w-sm h-full"
+                className="flip-card w-full min-w-[385px] min-h-[570px] max-w-sm h-[1000px]"
                 key={ticket.id}
               >
                 <div className="flip-card-inner w-full h-full">
