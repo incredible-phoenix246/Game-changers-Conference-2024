@@ -45,7 +45,6 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-
 .slick-dots li button::before {
   margin-top: 0px;
   margin-bottom: 10px;
@@ -57,4 +56,94 @@ input[type="number"]::-webkit-outer-spin-button {
 .slick-dots li.slick-active button::before {
   color: #b42626;
   opacity: 1;
+}
+
+.box {
+  position: relative;
+  /* width: 358px;
+  height: 272px; */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -ms-align-items: center;
+  overflow: hidden;
+}
+
+.box .content {
+  /* position: relative; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* -ms-align-items: center; */
+  /* background-color: white; */
+  z-index: 20;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 180%;
+  background: linear-gradient(#001b87, #0bce83);
+  animation: rotate 4s linear infinite;
+  /* background-color: ; */
+  /* border-radius: 20px; */
+  /* z-index: 1; */
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  background: white;
+  inset: 5px;
+  border-radius: 20px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  /* background: linear-gradient(
+    120deg,
+    rgb(255, 174, 145) 30%,
+    coral 88%,
+    bisque 40%,
+    rgb(255, 185, 160) 78%
+  );
+  color: white; */
+  transform: rotateY(180deg);
 }

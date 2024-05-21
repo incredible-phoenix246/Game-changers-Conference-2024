@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import * as React from "react";
+import { cn } from "@/utils";
+import useInView from "@/hooks/useInView";
 
 interface ImageProps {
   src: string;
@@ -76,8 +78,20 @@ function Organizers() {
 
     text.style.fontSize = max + "px";
   };
+
+  const SectionRef = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(SectionRef);
+  
   return (
-    <section>
+    <section
+      ref={SectionRef}
+      className={cn(
+        "bg-white",
+        isInView
+          ? "opacity-100 translate-y-0 md:delay-300 duration-500 min-h-screen"
+          : " opacity-0 translate-y-36"
+      )}
+    >
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">

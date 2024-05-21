@@ -8,11 +8,11 @@ import {
 import { Josefin_Sans } from "next/font/google";
 import React, { useEffect, useRef, useState } from "react";
 import { Location, Calendar2 } from "iconsax-react";
-import { ShuffleGrid } from "./hero";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Slider from "react-slick";
+import { Reaveal } from "../animation";
 
 const char = Josefin_Sans({ subsets: ["latin"] });
 
@@ -139,6 +139,7 @@ const HEROSECTION = () => {
                   makers, impact leaders and entrepreneurs with peak
                   performance.
                 </p> */}
+                
                 <div className="items-center justify-center w-full flex mx-auto">
                   <Image
                     src="/newlogo.png"

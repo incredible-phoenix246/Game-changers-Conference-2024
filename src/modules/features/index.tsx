@@ -3,6 +3,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import React from "react";
 import { useRef } from "react";
+import useMediaQuery from "@/hooks/use-media-query";
 
 const Features = () => {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
@@ -72,12 +73,17 @@ const Features = () => {
 };
 
 const HorizontalScrollCarousel = () => {
+  const { isMobile } = useMediaQuery();
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["1%", isMobile ? "-95%" : "-45%"]
+  );
 
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const textRef = React.useRef<HTMLSpanElement | null>(null);

@@ -4,6 +4,8 @@ import * as React from "react";
 import { VscLightbulbSparkle } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
+import { cn } from "@/utils";
+import useInView from "@/hooks/useInView";
 
 interface CardProps {
   imageSrc: string;
@@ -209,8 +211,19 @@ const WHYSECTION = () => {
 
     text.style.fontSize = max + "px";
   };
+
+  const SectionRef = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(SectionRef);
   return (
-    <section className="bg-black">
+    <section
+      ref={SectionRef}
+      className={cn(
+        "bg-black",
+        isInView
+          ? "opacity-100 translate-y-0 md:delay-300 duration-500 min-h-screen"
+          : " opacity-0 translate-y-36"
+      )}
+    >
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -241,8 +254,12 @@ const WHYSECTION = () => {
 export { ChipTabs, WHYSECTION };
 
 export function MAIN() {
+  const SectionRef = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(SectionRef);
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+    <div
+      className={cn("max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative")}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <span className="text-sm font-semibold uppercase tracking-wide text-red-300">

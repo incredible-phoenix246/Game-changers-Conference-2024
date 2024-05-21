@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import * as React from "react";
+import useInView from "@/hooks/useInView";
+import { cn } from "@/utils";
 
 interface SponsorImageProps {
   src: string;
@@ -104,8 +106,19 @@ const SponsorsSection: React.FC = () => {
 
     text.style.fontSize = max + "px";
   };
+
+  const SectionRef = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(SectionRef);
   return (
-    <section className="flex flex-col px-5 bg-black items-center justify-center mx-auto">
+    <section
+      ref={SectionRef}
+      className={cn(
+        "flex flex-col px-5 bg-black items-center justify-center mx-auto",
+        isInView
+          ? "opacity-100 translate-y-0 md:delay-300 duration-500"
+          : " opacity-0 translate-y-36"
+      )}
+    >
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -127,18 +140,16 @@ const SponsorsSection: React.FC = () => {
       </div>
 
       <section className="flex justify-center items-center px-16 mx-auto md:py-20 pb-6 max-md:px-5">
-        <div className="flex flex-col items-center justify-center mx-auto md:mt-7 w-full max-w-[1170px] max-md:max-w-full">
-          <div className="flex flex-col justify-center items-center w-full mx-auto px-12 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-            <div className="flex gap-5 items-center justify-between max-md:flex-wrap max-md:max-w-full w-full">
-              {sponsorImages.slice(0, 4).map((image) => (
-                <SponsorImage key={image.src} {...image} />
-              ))}
-            </div>
-            <div className="flex gap-5 justify-between items-center mt-16 max-md:flex-wrap max-md:mt-10 max-md:max-w-full w-full">
-              {sponsorImages.slice(4).map((image) => (
-                <SponsorImage key={image.src} {...image} />
-              ))}
-            </div>
+        <div className="flex flex-col items-center justify-center mx-auto md:mt-7 w-full gap-8 md:gap-0 md:space-y-8 max-w-7xl">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2  xl:grid-cols-4">
+            {sponsorImages.slice(0, 4).map((image) => (
+              <SponsorImage key={image.src} {...image} />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2  xl:grid-cols-4">
+            {sponsorImages.slice(4).map((image) => (
+              <SponsorImage key={image.src} {...image} />
+            ))}
           </div>
 
           <Button className="justify-center px-10 py-4 mt-20 text-base h-[56px] font-medium leading-6 text-center text-white bg-red-300 hover:bg-white hover:text-red-300 shadow-2xl rounded-[400px] max-md:px-5 max-md:mt-10">
