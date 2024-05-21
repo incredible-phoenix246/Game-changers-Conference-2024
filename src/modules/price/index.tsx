@@ -368,6 +368,17 @@ export const NewPriceSection = () => {
       )}
       id="ticket"
     >
+      <div className=" absolute top-0 left-0 md:p-[90px] p-[10px]">
+        <div className="item-hints">
+          <div className="hint" data-position="4">
+            <span className="hint-radius"></span>
+            <span className="hint-dot">Hint</span>
+            <div className="hint-content do--split-children">
+              <p>Hover on each card to see more details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div ref={containerRef} className="px-4 py-12 relative h-full">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
@@ -430,7 +441,7 @@ export const NewPriceSection = () => {
           {activeTab === "individual" &&
             individualTickets.map((ticket) => (
               <div
-                className="flip-card w-full min-w-[385px] min-h-[570px] max-w-sm h-full"
+                className="flip-card w-full min-w-[385px] min-h-[570px] max-w-sm h-[750px]"
                 key={ticket.id}
               >
                 <div className="flip-card-inner w-full h-full">
@@ -444,8 +455,8 @@ export const NewPriceSection = () => {
                     />
                   </div>
                   <div className="flip-card-back rounded-3xl">
-                    <div className="group flex flex-col mx-auto w-full max-w-sm bg-white rounded-2xl shadow-2xl transition-all duration-300  p-8 xl:p-12 box">
-                      <div className="content items-center justify-center w-full">
+                    <div className="group flex flex-col mx-auto w-full max-w-sm bg-white rounded-2xl shadow-2xl transition-all duration-300  p-8 xl:p-12 box ">
+                      <div className="content items-center justify-center w-full]">
                         <div className="border-b border-solid border-gray-200 pb-9 mb-9 ">
                           <div className="w-16 h-16 rounded-full bg-red-50 mx-auto flex justify-center items-center transition-all duration-300 group-hover:bg-red-100">
                             <svg
