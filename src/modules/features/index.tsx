@@ -46,25 +46,11 @@ const Features = () => {
   };
   return (
     <div className="bg-white relative">
-      {/* <div ref={containerRef} className="px-4 py-12 relative">
-        <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
-          <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
-            Thsoe Who Spoke <span className="text-red-100">Before</span>
-          </h2>
-
-          <p className="mt-5 w-full text-base tracking-normal text-white max-md:max-w-full">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            malesuada tristique justo quis ultrices. Morbi gravida dignissim
-            lectus, et semper nulla varius a
-          </p>
-        </div>
-        <span
-          className="top-0 absolute left-0 mx-auto whitespace-nowrap text-center font-bold uppercase text-transparent outline-4 outline-red-100 p-2 font-outline-2 opacity-[30%]"
-          ref={textRef}
-        >
-          PAST SPEAKERS
+      <div className="flex w-full mt-7 items-center justify-center">
+        <span className="font-semibold uppercase text-black text-3xl absolute top-10 font-montserrat">
+          Past Speakers
         </span>
-      </div> */}
+      </div>
       <div className="relative">
         <HorizontalScrollCarousel />
       </div>

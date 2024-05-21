@@ -5,7 +5,7 @@ import { ConfStat } from "@/modules/underHero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ABOUT OGUN DIGITAL",
+  title: "ABOUT FORWARD WITH REO",
 };
 
 const page = () => {
