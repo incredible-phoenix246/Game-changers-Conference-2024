@@ -129,9 +129,9 @@ const SponsorsSection: React.FC = () => {
             By aligning with our mission of fostering leadership and
             transformation, you will showcase your commitment to empowering
             future leaders. Take advantage of this unique opportunity to enhance
-            your brand's presence and connect with influential decision-makers
-            and innovators. Join us in making a lasting impact and driving
-            positive change.
+            your brand&apos;s presence and connect with influential
+            decision-makers and innovators. Join us in making a lasting impact
+            and driving positive change.
           </p>
         </div>
         <span
