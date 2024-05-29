@@ -126,7 +126,7 @@ const HEROSECTION = () => {
                 </div>
                 <div className="flex gap-2 items-center justify-center">
                   <Location />
-                  <span>Abuja Continental Hotel</span>
+                  <span>House on the rock , the refuge Abuja .</span>
                 </div>
               </div>
               <div>
@@ -139,7 +139,7 @@ const HEROSECTION = () => {
                   makers, impact leaders and entrepreneurs with peak
                   performance.
                 </p> */}
-                
+
                 <div className="items-center justify-center w-full flex mx-auto">
                   <Image
                     src="/newlogo.png"

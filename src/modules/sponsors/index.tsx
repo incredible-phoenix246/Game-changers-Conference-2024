@@ -126,9 +126,12 @@ const SponsorsSection: React.FC = () => {
           </h2>
 
           <p className="mt-5 w-full text-base tracking-normal text-white max-md:max-w-full">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            malesuada tristique justo quis ultrices. Morbi gravida dignissim
-            lectus, et semper nulla varius a
+            By aligning with our mission of fostering leadership and
+            transformation, you will showcase your commitment to empowering
+            future leaders. Take advantage of this unique opportunity to enhance
+            your brand's presence and connect with influential decision-makers
+            and innovators. Join us in making a lasting impact and driving
+            positive change.
           </p>
         </div>
         <span
@@ -139,7 +142,7 @@ const SponsorsSection: React.FC = () => {
         </span>
       </div>
 
-      <section className="flex justify-center items-center px-16 mx-auto md:py-20 pb-6 max-md:px-5">
+      <section className="flex justify-center items-center px-16 mx-auto md:pb-20 pb-6 max-md:px-5">
         <div className="flex flex-col items-center justify-center mx-auto md:mt-7 w-full gap-8 md:gap-0 md:space-y-8 max-w-7xl">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2  xl:grid-cols-4">
             {sponsorImages.slice(0, 4).map((image) => (

@@ -81,7 +81,7 @@ function Organizers() {
 
   const SectionRef = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(SectionRef);
-  
+
   return (
     <section
       ref={SectionRef}
@@ -99,9 +99,8 @@ function Organizers() {
           </h2>
 
           <p className="mt-5 w-full text-base tracking-normal text-black max-md:max-w-full">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            malesuada tristique justo quis ultrices. Morbi gravida dignissim
-            lectus, et semper nulla varius a
+            We are building a world class leadership live session and the
+            largest conference of emerging thought leaders
           </p>
         </div>
         <span

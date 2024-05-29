@@ -62,13 +62,14 @@ export const SPEAKERSECTION = () => {
       <div ref={containerRef} className="px-4 py-12 relative">
         <div className="flex flex-col px-5 text-center max-w-[756px] justify-center w-full mx-auto">
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
-            Our Noteworthy <span className="text-red-100">SPEAKERS</span>
+            FORWARD <span className="text-red-100">SPEAKERS</span>
           </h2>
 
           <p className="mt-5 w-full text-base tracking-normal text-white max-md:max-w-full">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            malesuada tristique justo quis ultrices. Morbi gravida dignissim
-            lectus, et semper nulla varius a
+            Join us at FORWARD, the premier leadership and life transformation
+            conference designed for those who aspire to grow and excel. This
+            event brings together top thought leaders and industry experts who
+            will share their insights and strategies for success.
           </p>
         </div>
         <span

@@ -115,6 +115,7 @@ const Tickets: Ticket[] = [
       "Networking Opportunities",
       "General seating row",
     ],
+    // home: "Home",
     price: {
       usd: "7-10",
       naira: "4-5k",
@@ -386,9 +387,8 @@ export const NewPriceSection = () => {
           </h2>
 
           <p className="mt-5 w-full text-base tracking-normal text-black max-md:max-w-full">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            malesuada tristique justo quis ultrices. Morbi gravida dignissim
-            lectus, et semper nulla varius a
+            Forward live comes with flexible ticket . EARLY BIRD TICKET IS
+            LIMITED. Take action NOW !!!
           </p>
         </div>
         <span
@@ -429,7 +429,7 @@ export const NewPriceSection = () => {
         </div>
       </div>
 
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-6 relative min-h-[80vh]">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-6 relative min-h-[90vh]">
         <div
           className={cn(
             "space-y-8  sm:gap-6 xl:gap-8 lg:space-y-0",
@@ -442,7 +442,7 @@ export const NewPriceSection = () => {
             individualTickets.map((ticket) => (
               <div
                 className={cn(
-                  "flip-card w-full min-w-[385px] min-h-[570px] max-w-sm",
+                  "flip-card w-full min-w-[350px] min-h-[570px] max-w-sm",
                   ticket.id === 2
                     ? "h-[700px]"
                     : ticket.id === 3
@@ -458,13 +458,13 @@ export const NewPriceSection = () => {
                     <Image
                       src={`${ticket.back}`}
                       alt="tickect"
-                      className="w-full h-full object-cover duration-500 max-w-[385px] max-h-[570px]"
+                      className="w-full h-full object-cover duration-500 max-w-[350px] max-h-[570px]"
                       width={769}
                       height={1141}
                     />
                   </div>
                   <div className="flip-card-back rounded-3xl">
-                    <div className="group flex flex-col mx-auto w-full max-w-sm bg-white rounded-2xl shadow-2xl transition-all duration-300  p-8 xl:p-12 box ">
+                    <div className="group flex flex-col mx-auto w-full max-w-sm bg-white rounded-2xl shadow-2xl transition-all duration-300  px-4 py-8 box">
                       <div className="content items-center justify-center w-full]">
                         <div className="border-b border-solid border-gray-200 pb-9 mb-9 ">
                           <div className="w-16 h-16 rounded-full bg-red-50 mx-auto flex justify-center items-center transition-all duration-300 group-hover:bg-red-100">

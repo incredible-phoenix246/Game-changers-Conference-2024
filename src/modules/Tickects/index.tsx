@@ -27,6 +27,7 @@ const packageData = [
   {
     packageName: "Standard Pass",
     price: "₦10,000 {$7}",
+    home: " far g=fom home ",
   },
   {
     packageName: "Executive Pass",
@@ -104,7 +105,7 @@ export function MyComponent() {
           <h2 className="self-center text-4xl md:text-6xl font-bold tracking-wide text-red-200 max-md:max-w-full">
             Reserve your <span className="text-red-100">SEATS</span>
           </h2>
-
+ 
           <p className="mt-5 w-full text-base tracking-normal text-black max-md:max-w-full">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             malesuada tristique justo quis ultrices. Morbi gravida dignissim

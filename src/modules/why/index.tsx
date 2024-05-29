@@ -232,9 +232,8 @@ const WHYSECTION = () => {
           </h2>
 
           <p className="mt-5 w-full text-base tracking-normal text-white max-md:max-w-full">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            malesuada tristique justo quis ultrices. Morbi gravida dignissim
-            lectus, et semper nulla varius a
+            You can&apos;t afford to miss the number #1 Leadership and Life
+            transformation gathering.
           </p>
         </div>
         <span
