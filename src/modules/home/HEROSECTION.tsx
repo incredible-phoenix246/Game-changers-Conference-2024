@@ -156,7 +156,7 @@ const HEROSECTION = () => {
                   asChild
                   className="justify-center self-start px-10 py-4 mt-10 text-base font-medium h-[56px] leading-6 text-center text-white bg-red-200 hover:bg-white hover:text-red-200 shadow-2xl rounded-[400px] max-md:px-5"
                 >
-                  <Link href="#organizer">Learn More</Link>
+                  <Link href="/about">Learn More</Link>
                 </Button>
               </div>
             </div>

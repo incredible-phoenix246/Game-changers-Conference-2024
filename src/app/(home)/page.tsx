@@ -21,7 +21,8 @@ const HOME = () => {
       <Features /> */}
       <LogoCarousel color="black" />
       {/* <SPEAKERSECTION />
-      <LogoCarousel color="white" /> */}
+      <LogoCarousel color="white" />
+       */}
       <NewPriceSection />
       <LogoCarousel color="black" />
       {/* <SponsorsSection />
