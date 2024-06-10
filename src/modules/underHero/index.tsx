@@ -23,18 +23,18 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, Icon }) => {
 const statData = [
   {
     Icon: Microphone2,
-    value: "36+",
-    label: "Unique Sessions",
+    value: "10+",
+    label: "Transformational Sessions",
   },
   {
     Icon: Profile,
-    value: "12",
-    label: "Amazing Speakers",
+    value: "15+",
+    label: "Global Speakers",
   },
   {
     Icon: Book,
     value: "2350+",
-    label: "Books Available",
+    label: "Unique Experience",
   },
 ];
 
