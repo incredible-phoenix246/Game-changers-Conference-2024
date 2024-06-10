@@ -315,10 +315,10 @@ export function MAIN() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/qv1afUOxfwU?si=n4s-dl_M3ZBsf_Jo&autoplay=1&mute=1&amp;start=100"
+            src="https://www.youtube.com/embed/r0qw827A97o?si=abB6VDUHyZ8UPoyd&autoplay=1&mute=1"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            // referrerpolicy="strict-origin-when-cross-origin"
+            referrerPolicy="strict-origin-when-cross-origin"
             // allowfullscreen
             className="rounded-lg shadow-lg h-full w-full object-cover"
           />

@@ -17,15 +17,15 @@ const HOME = () => {
       <Organizers />
       <LogoCarousel color="black" />
       <WHYSECTION />
-      <LogoCarousel color="white" />
-      <Features />
+      {/* <LogoCarousel color="white" />
+      <Features /> */}
       <LogoCarousel color="black" />
       <SPEAKERSECTION />
       <LogoCarousel color="white" />
       <NewPriceSection />
       <LogoCarousel color="black" />
-      <SponsorsSection />
-      <LogoCarousel color="white" />
+      {/* <SponsorsSection />
+      <LogoCarousel color="white" /> */}
       <HomeSection />
       <LogoCarousel color="black" />
     </>

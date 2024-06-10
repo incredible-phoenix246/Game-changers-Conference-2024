@@ -117,8 +117,8 @@ const Tickets: Ticket[] = [
     ],
     // home: "Home",
     price: {
-      usd: "7-10",
-      naira: "4-5k",
+      usd: "4",
+      naira: "5k",
     },
     back: "/stand.png",
   },
@@ -198,8 +198,8 @@ const Tickets: Ticket[] = [
       "Certificate of Recognition as a FORWARD-THINKING ORGANIZATION",
     ],
     price: {
-      usd: "150-384",
-      naira: "200-500k",
+      usd: "384",
+      naira: "500k",
     },
     back: "/group.png",
   },

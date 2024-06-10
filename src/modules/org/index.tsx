@@ -4,6 +4,7 @@ import Link from "next/link";
 import * as React from "react";
 import { cn } from "@/utils";
 import useInView from "@/hooks/useInView";
+import { CldVideoPlayer } from "next-cloudinary";
 
 interface ImageProps {
   src: string;
@@ -114,14 +115,24 @@ function Organizers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="items-center justify-center h-full flex">
-              <iframe
+              {/* <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/qv1afUOxfwU?si=n4s-dl_M3ZBsf_Jo&autoplay=1&mute=1&amp;start=140"
+                src="https://res.cloudinary.com/dnik53vns/video/upload/f_auto:video,q_auto/v1/videos/agrcodlyrjzauc5dtym6&autoplay=1&mute=1"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 // referrerpolicy="strict-origin-when-cross-origin"
                 // allowfullscreen
+                className="rounded-lg shadow-lg h-full w-full object-cover"
+              /> */}
+              <CldVideoPlayer
+                width="1920"
+                height="1080"
+                src="videos/agrcodlyrjzauc5dtym6"
+                autoplay={true}
+                muted
+                // AutoplayMode="on-scroll"
+                loop={true}
                 className="rounded-lg shadow-lg h-full w-full object-cover"
               />
             </div>

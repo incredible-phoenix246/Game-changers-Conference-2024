@@ -17,7 +17,7 @@ import { Reaveal } from "../animation";
 const char = Josefin_Sans({ subsets: ["latin"] });
 
 const HEROSECTION = () => {
-  const COUNTDOWN_FROM = "8/24/2024";
+  const COUNTDOWN_FROM = "8/31/2024";
   const SECOND = 1000;
   const MINUTE = SECOND * 60;
   const HOUR = MINUTE * 60;
@@ -122,7 +122,7 @@ const HEROSECTION = () => {
               <div className="flex gap-5 justify-between self-center py-0.5 text-sm leading-5 text-white mt-5 w-full md:w-[60%]">
                 <div className="flex gap-2 items-center justify-center">
                   <Calendar2 />
-                  <span>24 AUG, 2024</span>
+                  <span>31 AUG, 2024</span>
                 </div>
                 <div className="flex gap-2 items-center justify-center">
                   <Location />
@@ -130,16 +130,6 @@ const HEROSECTION = () => {
                 </div>
               </div>
               <div>
-                {/* <div >
-                  
-                </div>
-                <p className="mt-2 text-base leading-6 text-white max-md:max-w-full text-center">
-                  It&apos;s time to transform and inspire you to get in your A
-                  with the relevant knowledge from one percent of top change
-                  makers, impact leaders and entrepreneurs with peak
-                  performance.
-                </p> */}
-
                 <div className="items-center justify-center w-full flex mx-auto">
                   <Image
                     src="/newlogo.png"
