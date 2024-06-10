@@ -20,8 +20,8 @@ const HOME = () => {
       {/* <LogoCarousel color="white" />
       <Features /> */}
       <LogoCarousel color="black" />
-      <SPEAKERSECTION />
-      <LogoCarousel color="white" />
+      {/* <SPEAKERSECTION />
+      <LogoCarousel color="white" /> */}
       <NewPriceSection />
       <LogoCarousel color="black" />
       {/* <SponsorsSection />
