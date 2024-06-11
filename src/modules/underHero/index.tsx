@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Microphone2, Book, Icon, Profile } from "iconsax-react";
+import { Microphone2, Book, Icon, Profile, Award } from "iconsax-react";
 
 interface StatItemProps {
   Icon: Icon;
@@ -33,8 +33,13 @@ const statData = [
   },
   {
     Icon: Book,
-    value: "2350+",
-    label: "Unique Experience",
+    value: "2000+",
+    label: "Delegate",
+  },
+   {
+    Icon: Award,
+    value: "1",
+    label: "Transformation Experience",
   },
 ];
 
