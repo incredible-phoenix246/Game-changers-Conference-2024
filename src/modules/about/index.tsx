@@ -76,7 +76,7 @@ const AboutUs = () => {
                   height={400}
                 />
                 <h2 className="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center">
-                  TO ARCHITECT OF TRANSFORMATIVE LEADERSHIP
+                  ARCHITECT OF TRANSFORMATIVE LEADERSHIP
                 </h2>
                 <p className="font-normal text-xl leading-8 text-gray-500 max-lg:text-center max-w-2xl mx-auto">
                   FORWARD is an all-time leadership and life transformation live
