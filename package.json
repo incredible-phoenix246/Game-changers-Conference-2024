@@ -24,7 +24,7 @@
     "framer-motion": "^11.1.7",
     "iconsax-react": "^0.0.8",
     "lucide-react": "^0.378.0",
-    "next": "14.2.3",
+    "next": "^14.2.4",
     "next-cloudinary": "^6.6.2",
     "react": "^18",
     "react-dom": "^18",

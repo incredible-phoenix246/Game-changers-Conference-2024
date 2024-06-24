@@ -10,7 +10,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Ticket } from "iconsax-react";
 import { Form } from "../Tickects";
 import { useStateCtx } from "@/context/StateCtx";
 import Link from "next/link";
@@ -106,6 +105,19 @@ const PriceSection = () => {
 export { PriceSection };
 
 const Tickets: Ticket[] = [
+  {
+    id: 9,
+    name: "Student Pass",
+    type: "individual",
+    includedFeatures: [
+      "Access to the event Experience, all keynote speeches and discussions",
+      "Networking Opportunities",
+      "General seating row",
+    ],
+    // home: "Home",
+    tick: "free",
+    back: "/student.png",
+  },
   {
     id: 1,
     name: "Standard Pass",
@@ -212,10 +224,11 @@ interface Ticket {
   desc?: string;
   type?: "individual" | "group";
   includedFeatures: string[];
-  price: {
+  price?: {
     usd: number | string;
     naira: number | string;
   };
+  tick?: string;
 }
 
 interface TicketsCardProps {
@@ -258,22 +271,33 @@ const TicketsCard = ({ ticket }: TicketsCardProps) => {
             <p className="text-base font-semibold text-gray-600">
               Pay now or Book your Ticket
             </p>
-            <p className="mt-6 flex items-baseline justify-center gap-x-2">
-              <span className="text-5xl font-bold tracking-tight text-gray-900">
-                {`$${ticket.price.usd}`}
-              </span>
-              <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                USD
-              </span>
-            </p>
-            <p className="mt-6 flex items-baseline justify-center gap-x-2">
-              <span className="text-5xl font-bold tracking-tight text-gray-900">
-                {`₦${ticket.price.naira}`}
-              </span>
-              <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                naria
-              </span>
-            </p>
+            {ticket.price && (
+              <>
+                <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                  <span className="text-5xl font-bold tracking-tight text-gray-900">
+                    {`$${ticket?.price.usd}`}
+                  </span>
+                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                    USD
+                  </span>
+                </p>
+                <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                  <span className="text-5xl font-bold tracking-tight text-gray-900">
+                    {`₦${ticket?.price.naira}`}
+                  </span>
+                  <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                    naria
+                  </span>
+                </p>
+              </>
+            )}
+            {ticket.tick && (
+              <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                <span className="text-5xl font-bold tracking-tight text-gray-900">
+                  {ticket.tick}
+                </span>
+              </p>
+            )}
             <Button
               onClick={() => {
                 // @ts-ignore
@@ -350,7 +374,7 @@ export const NewPriceSection = () => {
   const [activeTab, setActiveTab] = React.useState("individual");
   const individualTickets = Tickets.filter(
     (ticket) => ticket.type === "individual"
-  ).slice(0, 4);
+  ).slice(0, 5);
   const groupTickets = Tickets.filter(
     (ticket) => ticket.type === "group"
   ).slice(0, 1);
@@ -429,13 +453,13 @@ export const NewPriceSection = () => {
         </div>
       </div>
 
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-6 relative min-h-[90vh]">
+      <div className="mx-auto px-4 flex lg:px-8 mt-6 relative min-h-[90vh] items-center justify-center w-full">
         <div
           className={cn(
             "space-y-8  sm:gap-6 xl:gap-8 lg:space-y-0",
             activeTab === "group"
               ? "grid-cols-1 place-content-center"
-              : "lg:grid lg:grid-cols-4"
+              : "flex flex-wrap"
           )}
         >
           {activeTab === "individual" &&
@@ -485,12 +509,21 @@ export const NewPriceSection = () => {
                             {ticket.name}
                           </h3>
                           <div className="flex items-center justify-center">
-                            <span className="font-manrope text-4xl font-medium text-gray-900">
-                              {`₦${ticket.price.naira}`}
-                            </span>
-                            <span className="font-manrope text-xl pl-3 font-medium text-gray-900 justify-end">
-                              {`$${ticket.price.usd}`}
-                            </span>
+                            {ticket.price && (
+                              <>
+                                <span className="font-manrope text-4xl font-medium text-gray-900">
+                                  {`₦${ticket?.price?.naira}`}
+                                </span>
+                                <span className="font-manrope text-xl pl-3 font-medium text-gray-900 justify-end">
+                                  {`$${ticket?.price?.usd}`}
+                                </span>
+                              </>
+                            )}
+                            {ticket.tick && (
+                              <span className="font-manrope text-4xl font-medium text-gray-900">
+                                {ticket.tick}
+                              </span>
+                            )}
                           </div>
                         </div>
                         <ul className="mb-12 space-y-6 text-left text-sm text-gray-600 group-hover:text-gray-900">
@@ -557,10 +590,10 @@ export const NewPriceSection = () => {
                           </h3>
                           <div className="flex items-center justify-center">
                             <span className="font-manrope text-4xl font-medium text-gray-900">
-                              {`₦${ticket.price.naira}`}
+                              {`₦${ticket?.price?.naira}`}
                             </span>
                             <span className="font-manrope text-xl pl-3 font-medium text-gray-900 justify-end">
-                              {`$${ticket.price.usd}`}
+                              {`$${ticket?.price?.usd}`}
                             </span>
                           </div>
                         </div>
