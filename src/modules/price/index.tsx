@@ -107,19 +107,6 @@ export { PriceSection };
 const Tickets: Ticket[] = [
   {
     id: 9,
-    name: "Student Pass",
-    type: "individual",
-    includedFeatures: [
-      "Access to the event Experience, all keynote speeches and discussions",
-      "Networking Opportunities",
-      "General seating row",
-    ],
-    // home: "Home",
-    tick: "free",
-    back: "/student.png",
-  },
-  {
-    id: 1,
     name: "Standard Pass",
     type: "individual",
     includedFeatures: [
@@ -128,10 +115,7 @@ const Tickets: Ticket[] = [
       "General seating row",
     ],
     // home: "Home",
-    price: {
-      usd: "4",
-      naira: "5k",
-    },
+    tick: "free",
     back: "/stand.png",
   },
   {
