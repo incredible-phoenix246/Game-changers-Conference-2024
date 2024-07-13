@@ -443,7 +443,7 @@ export const NewPriceSection = () => {
             "space-y-8  sm:gap-6 xl:gap-8 lg:space-y-0",
             activeTab === "group"
               ? "grid-cols-1 place-content-center"
-              : "flex flex-wrap"
+              : "flex flex-wrap w-full items-center"
           )}
         >
           {activeTab === "individual" &&
